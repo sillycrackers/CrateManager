@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Erik\source\repos\CrateManager\CrateManager\App.xaml
-11407045341
+21437451792
 
-3-1233169557
+4-190841649
 193-1891726104
-MainWindow.xaml;
+MainWindow.xaml;Styles\ResourceDictionary1.xaml;
 
 False
 

@@ -6,5 +6,10 @@
     <Style TargetType="TextBlock" x:Key="TextOnDark">
         <Setter Property="Foreground" Value="WhiteSmoke"/>
     </Style>
+
+    <Style TargetType="ListBox" x:Key="ListBoxItemStyle">
+        <Setter Property="Background" Value="#303442"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+    </Style>
     
 </ResourceDictionary>
