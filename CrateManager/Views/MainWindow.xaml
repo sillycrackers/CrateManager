@@ -23,25 +23,35 @@
                 <StackPanel Grid.Column="1">
                     <TextBlock Text="Crate 1" VerticalAlignment="Center" HorizontalAlignment="Center"
                                Style="{StaticResource TextOnDark}" FontSize="20"/>
-                    <ListView x:Name="listView_Items" ItemsSource="{Binding Items}" Height="200" 
+                    <ListView ItemContainerStyle="{StaticResource ListViewItemStyle}" x:Name="listView_Items" ItemsSource="{Binding Items}" Height="200" 
                              Width="200" Margin="0,5,0,5" Style="{StaticResource ListBoxItemStyle}">
-
-                        <ListView.ItemContainerStyle>
-                            <Style TargetType="ListViewItem">
-                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                            </Style>
-                        </ListView.ItemContainerStyle>
 
                         <ListView.View>
 
-                            <GridView ColumnHeaderContainerStyle="{StaticResource GridHeader}">
+                            <GridView ColumnHeaderContainerStyle="{StaticResource GridHeader}" >
  
-                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding Name}">
-                                    <GridViewColumnHeader Content="Item Name" Background="DarkSlateGray"/>
+                                <GridViewColumn Width="100">
+
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+
+
+                                    <GridViewColumnHeader Content="Item Name" Background="DarkSlateGray" Width="auto"/>
+                    
                                 </GridViewColumn>
                                 
-                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding Quantity}">
-                                    <GridViewColumnHeader Content="Quantity" Background="DarkSlateGray"/>
+                                <GridViewColumn Width="100">
+
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Quantity}" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+
+                                    <GridViewColumnHeader Content="Quantity" Background="DarkSlateGray" Width="auto"/>
                                 </GridViewColumn>
                                 
                             </GridView>

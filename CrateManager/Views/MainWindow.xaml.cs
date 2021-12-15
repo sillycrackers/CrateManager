@@ -16,7 +16,6 @@ namespace CrateManager
             InitializeComponent();
 
             this.listView_Items.DataContext = CurrentCrate;
-
         }
 
         private void ButtonNewItemEntry_Click(object sender, RoutedEventArgs e)
