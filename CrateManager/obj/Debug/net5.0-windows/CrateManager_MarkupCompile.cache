@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\
 CrateManager
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\Erik\source\repos\CrateManager\CrateManager\App.xaml
-21437451792
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\App.xaml
+2-1873422504
 
-4-190841649
+7-2086593502
 193-1891726104
-MainWindow.xaml;Styles\ResourceDictionary1.xaml;
+Styles\Styles1.xaml;Views\MainWindow.xaml;
 
 False
 

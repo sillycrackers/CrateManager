@@ -2,9 +2,9 @@
 
 namespace CrateManager.Styles
 {
-    partial class ResourceDictionary1 : ResourceDictionary
+    partial class Styles1 : ResourceDictionary
     {
-        public ResourceDictionary1()
+        public Styles1()
         {
             this.InitializeComponent();
         }

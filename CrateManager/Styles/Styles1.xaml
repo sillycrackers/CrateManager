@@ -1,0 +1,38 @@
+﻿<ResourceDictionary x:Class="CrateManager.Styles.Styles1"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="using:CrateManager.Styles/Styles1">
+    <!-- 
+    Color Pallet 1 Blues
+    
+    Dark to Light
+    #0010D
+    #012326
+    #011C40
+    #024059
+    #03738C
+    -->
+    
+    <Style TargetType="TextBlock" x:Key="TextOnDark">
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+    </Style>
+
+    <Style TargetType="ListBox" x:Key="ListBoxItemStyle">
+        <Setter Property="Background" Value="#012326"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+    </Style>
+
+
+    <Style x:Key="GridHeader" TargetType="{x:Type GridViewColumnHeader}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                    <TextBlock Text="{TemplateBinding Content}" Padding="5" 
+                     Width="{TemplateBinding Width}" TextAlignment="Center" Foreground="WhiteSmoke"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>

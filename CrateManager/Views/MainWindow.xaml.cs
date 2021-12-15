@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CrateManager.Models;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace CrateManager
 {
@@ -20,9 +9,19 @@ namespace CrateManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Crate CurrentCrate { get; set; }
         public MainWindow()
         {
+            CurrentCrate = new Crate();
             InitializeComponent();
+
+            this.listView_Items.DataContext = CurrentCrate;
+
+        }
+
+        private void ButtonNewItemEntry_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentCrate.Items.Add(new CrateItem(this.TextBoxNewItem.Text));
         }
     }
 }
