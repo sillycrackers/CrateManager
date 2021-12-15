@@ -22,33 +22,36 @@
         <Setter Property="Foreground" Value="WhiteSmoke"/>
     </Style>
 
+    <!-- Global ListView GridView Column Style -->
 
-    <Style x:Key="GridHeader" TargetType="{x:Type GridViewColumnHeader}">
+    <Style TargetType="{x:Type GridViewColumnHeader}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
                     <TextBlock Text="{TemplateBinding Content}" Padding="5" 
-                     Width="{TemplateBinding Width}" TextAlignment="Center" Foreground="WhiteSmoke"/>
+                     Width="{TemplateBinding Width}" TextAlignment="Left" Foreground="WhiteSmoke"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
+
+    <!-- ListView Item Style -->
+
     <Style x:Key="ListViewItemStyle" TargetType="{x:Type ListViewItem}">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        
         <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="Aquamarine"/>
+                <Setter Property="Background" Value="WhiteSmoke"/>
                 <Setter Property="Foreground" Value="Black"/>
-                <Setter Property="BorderThickness" Value="0"/>
-                
+            
             </Trigger>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="Aquamarine"/>
+                <Setter Property="Background" Value="WhiteSmoke"/>
                 <Setter Property="Foreground" Value="Black"/>
-                <Setter Property="BorderThickness" Value="0"/>
             </Trigger>
         </Style.Triggers>
     </Style>

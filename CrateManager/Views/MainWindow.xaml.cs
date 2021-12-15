@@ -1,4 +1,5 @@
 ﻿using CrateManager.Models;
+using CrateManager.ViewModels;
 using System.Windows;
 
 
@@ -9,18 +10,18 @@ namespace CrateManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Crate CurrentCrate { get; set; }
+        public CrateViewModel SelectedCrate { get; set; }
         public MainWindow()
         {
-            CurrentCrate = new Crate();
-            InitializeComponent();
+            SelectedCrate = new CrateViewModel();
 
-            this.listView_Items.DataContext = CurrentCrate;
+            InitializeComponent();
+            
         }
 
         private void ButtonNewItemEntry_Click(object sender, RoutedEventArgs e)
         {
-            CurrentCrate.Items.Add(new CrateItem(this.TextBoxNewItem.Text));
+            
         }
     }
 }
