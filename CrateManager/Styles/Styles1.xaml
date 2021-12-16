@@ -12,18 +12,16 @@
     #024059
     #03738C
     -->
-    
-    <Style TargetType="TextBlock" x:Key="TextOnDark">
-        <Setter Property="Foreground" Value="WhiteSmoke"/>
-    </Style>
 
-    <Style TargetType="ListBox" x:Key="ListBoxItemStyle">
-        <Setter Property="Background" Value="#012326"/>
-        <Setter Property="Foreground" Value="WhiteSmoke"/>
-    </Style>
+    <!-- GLOBAL STYELS -->
 
     <!-- Global ListView GridView Column Style -->
 
+    <Style TargetType ="{x:Type Window}">
+        <Setter Property="Background" Value= "#00010D"/>
+    </Style>
+    
+    
     <Style TargetType="{x:Type GridViewColumnHeader}">
         <Setter Property="Template">
             <Setter.Value>
@@ -34,6 +32,11 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    
+    
+    
+    <!-- UNIQUE STYLES -->
 
 
     <!-- ListView Item Style -->
@@ -42,6 +45,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
 
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">

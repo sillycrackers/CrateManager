@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace CrateManager.Models
+namespace CrateManager
 {
     public class ObservableObject : INotifyPropertyChanged
     {
