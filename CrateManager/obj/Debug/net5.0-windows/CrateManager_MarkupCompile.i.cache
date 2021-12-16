@@ -4,13 +4,18 @@
 winexe
 C#
 .cs
-C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\
 CrateManager
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\Erik\source\repos\CrateManager\CrateManager\App.xaml
 3443396156
+=======
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\App.xaml
+2-1873422504
+>>>>>>> 78bbfb524bbfb7f4fe3369d48087eadfdc42802e
 
 10993862037
 193-1891726104
