@@ -50,3 +50,5 @@ C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Vi
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\MainWindow.baml
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateWindow.g.cs
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateWindow.baml
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateWindow.g.cs
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateWindow.baml
