@@ -18,20 +18,7 @@ namespace CrateManager
 
             InitializeComponent();
 
-            listView_Items.DataContext = SelectedCrate;
-
         }
 
-        private void ButtonNewItemEntry_Click(object sender, RoutedEventArgs e)
-        {
-            SelectedCrate.Items.Add(new CrateItem(TextBoxNewItem.Text));
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            CrateWindow crateWindow = new CrateWindow();
-
-            crateWindow.Show();
-        }
     }
 }

@@ -4,72 +4,79 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrateManager"
+        xmlns:viewModels="clr-namespace:CrateManager.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" WindowState="Maximized" 
-        >
-
-    <StackPanel>
-        <TextBlock Text="Crate Manager" VerticalAlignment="Center" HorizontalAlignment="Center"
-                           Foreground="WhiteSmoke" FontSize="40" Margin="0,10,0,20"/>
+        Title="MainWindow" WindowState="Maximized" d:Height="1080" d:Width="1920" MinHeight="300" MinWidth="750"
         
-        <StackPanel Grid.Column="1">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
+        >
+    <Window.Resources>
+        <viewModels:CrateViewModel x:Key="testList"/>
+    </Window.Resources>
+    
+    <Grid Margin="10">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125" MinHeight="125"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <Border Grid.ColumnSpan="6" Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="Crate Manager" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Foreground="#b86c35" FontSize="60" Margin="0,10,0,20"/>
+        </Border>
+
+        <!-- Work Area -->
+        <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5">
+            <ListBox x:Name="blag" ItemsSource="{Binding Source={StaticResource testList}}">
                 
-                
-                <StackPanel Grid.Column="1">
-                    <TextBlock  Text="Crate" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                Foreground="WhiteSmoke" FontSize="20"/>
-                    <Button Height="30" Content="Hello"/>
-                    <ListView   ItemContainerStyle="{StaticResource ListViewItemStyle}" 
-                                x:Name="listView_Items" ItemsSource="{Binding Items}" Height="200" 
-                                Width="200" Margin="0,5,0,5" Background="#011C40" BorderBrush="DarkGray">
+            </ListBox>
+        </Border>
+        
+        <!-- Menu Area -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="5">
+            <RadioButton Content="Main Page" 
+                         Foreground="#8dba45" FontSize="20" 
+                         Height="50"
+                         VerticalAlignment="Center"
+                         Style="{StaticResource MainMenuButton}"
+                         >
+                        
+            </RadioButton>
+            <RadioButton Content="Second Page" 
+                         Foreground="#8dba45" FontSize="20" 
+                         Height="50"
+                         VerticalAlignment="Center"
+                         Style="{StaticResource MainMenuButton}"
+                         >
 
-                        <ListView.View>
-                            <GridView>
-                                
-                                <GridViewColumn Header="Item:" Width="80">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding Name}"/>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
+            </RadioButton>
+            <RadioButton Content="Third Page" 
+                         Foreground="#8dba45" FontSize="20" 
+                         Height="50"
+                         VerticalAlignment="Center"
+                         Style="{StaticResource MainMenuButton}"
+                         >
+            </RadioButton>
 
-                                <GridViewColumn Header="Quantity:" Width="80">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding Quantity}"/>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                                
-
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </StackPanel>
-
-                <DockPanel>
-                    <Border CornerRadius="5" Background="#011C40" BorderBrush="DarkGray" BorderThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <StackPanel Height="125">
-                            <TextBlock FontSize="16" Margin="0,10,0,10" HorizontalAlignment="Center" Text="New Item Entry:" Foreground="WhiteSmoke"/>
-                            <TextBox HorizontalAlignment="Center" x:Name="TextBoxNewItem" Width="150" Margin="10,0,10,0"/>
-                            <Button x:Name="ButtonNewItemEntry" Width="100" Content="Enter" Height="20" Margin="0,10,0,10" Click="ButtonNewItemEntry_Click" Padding="0,0,0,2" />
-                        </StackPanel>
-                    </Border>
-                </DockPanel>
-                
-                
-
-            </Grid>
-           
+            
         </StackPanel>
-        <Button Content="Open Crate Widnow" Height="30" Width="150" Margin="0,10,0,0" Click="Button_Click"/>
-    </StackPanel>
 
+        <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="5" />
+
+    </Grid>
 
 </Window>

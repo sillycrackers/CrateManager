@@ -25,7 +25,6 @@ C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-win
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\CrateManager.dll
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\ref\CrateManager.dll
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\CrateManager.pdb
-C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.AssemblyReference.cache
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Styles\Styles1.baml
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Styles\Styles1.g.cs
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\MainWindow.g.cs
@@ -50,5 +49,6 @@ C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Vi
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\MainWindow.baml
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateWindow.g.cs
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateWindow.baml
-C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateWindow.g.cs
-C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateWindow.baml
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\NewCrate.g.cs
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\NewCrate.baml

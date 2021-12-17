@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CrateManager.Views
 {
     /// <summary>
-    /// Interaction logic for CrateWindow.xaml
+    /// Interaction logic for NewCrate.xaml
     /// </summary>
-    public partial class CrateWindow : Window
+    public partial class NewCrate : UserControl
     {
-        public CrateWindow()
+        public NewCrate()
         {
             InitializeComponent();
         }

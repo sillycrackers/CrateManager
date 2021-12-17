@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\App.xaml
-3443396156
+3415980395
 
-10993862037
+10-215903913
 193-1891726104
-Styles\Styles1.xaml;Views\CrateWindow.xaml;Views\MainWindow.xaml;
+Styles\Styles1.xaml;Views\MainWindow.xaml;Views\NewCrate.xaml;
 
-True
+False
 
