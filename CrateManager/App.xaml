@@ -1,9 +1,13 @@
 ﻿<Application x:Class="CrateManager.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:CrateManager"
+             xmlns:views="clr-namespace:CrateManager.Views"
+             xmlns:viewModels="clr-namespace:CrateManager.ViewModels"
              StartupUri="Views/MainWindow.xaml">
+    
     <Application.Resources>
+
         <ResourceDictionary Source="Styles/Styles1.xaml"/>
+
     </Application.Resources>
 </Application>

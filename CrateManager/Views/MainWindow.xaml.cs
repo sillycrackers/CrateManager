@@ -11,14 +11,18 @@ namespace CrateManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        public CrateViewModel SelectedCrate { get; set; }
+
         public MainWindow()
         {
-            SelectedCrate = new CrateViewModel();
 
             InitializeComponent();
 
+            DataContext = new MainViewModel();
         }
 
+        private void ShowCrateView(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

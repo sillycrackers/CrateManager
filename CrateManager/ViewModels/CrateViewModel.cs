@@ -1,29 +1,13 @@
-﻿using CrateManager.Models;
-using System.Collections.ObjectModel;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CrateManager.ViewModels
 {
-    public class CrateViewModel : ObservableObject
+    public class CrateViewModel : BaseViewModel
     {
-        public ObservableCollection<CrateItem> Items { get; set; }
-
-        private object _currentView;
-
-        public object CurrentView
-        {
-            get { return _currentView; }
-            set 
-            { 
-                _currentView = value;
-            }
-        }
-
-
-        public CrateViewModel()
-        {
-            Items = new ObservableCollection<CrateItem>();
-        }
 
     }
 }

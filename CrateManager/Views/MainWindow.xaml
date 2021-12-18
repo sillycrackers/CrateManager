@@ -3,16 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CrateManager"
         xmlns:viewModels="clr-namespace:CrateManager.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" WindowState="Maximized" d:Height="1080" d:Width="1920" MinHeight="300" MinWidth="750"
-        
         >
-    <Window.Resources>
-        <viewModels:CrateViewModel x:Key="testList"/>
-    </Window.Resources>
-    
+
     <Grid Margin="10">
 
         <Grid.ColumnDefinitions>
@@ -40,31 +35,32 @@
         </Border>
 
         <!-- Work Area -->
-        <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5">
-            <ListBox x:Name="blag" ItemsSource="{Binding Source={StaticResource testList}}">
-                
-            </ListBox>
-        </Border>
-        
+        <Border Grid.Column="1" Grid.Row="1" 
+                Grid.ColumnSpan="5" Grid.RowSpan="5"
+                Background="#444444"
+                />
+
         <!-- Menu Area -->
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="5">
-            <RadioButton Content="Main Page" 
+            <RadioButton Content="Crate View" 
                          Foreground="#8dba45" FontSize="20" 
                          Height="50"
                          VerticalAlignment="Center"
-                         Style="{StaticResource MainMenuButton}"
+                         Style="{StaticResource MainMenuButton}" Checked="ShowCrateView"
+                         Command="{Binding UpdateViewCommand}" CommandParameter="CrateView"
                          >
                         
             </RadioButton>
-            <RadioButton Content="Second Page" 
+            <RadioButton Content="New Crate View" 
                          Foreground="#8dba45" FontSize="20" 
                          Height="50"
                          VerticalAlignment="Center"
                          Style="{StaticResource MainMenuButton}"
+                         Command="{Binding UpdateViewCommand}" CommandParameter="NewCrateView"
                          >
 
             </RadioButton>
-            <RadioButton Content="Third Page" 
+            <RadioButton Content="Delete Crate" 
                          Foreground="#8dba45" FontSize="20" 
                          Height="50"
                          VerticalAlignment="Center"
@@ -75,7 +71,10 @@
             
         </StackPanel>
 
-        <ContentControl Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="5" />
+        <ContentControl Grid.Row="1" Grid.Column="1" 
+                        Grid.ColumnSpan="5" Grid.RowSpan="5" 
+                        Content="{Binding SelectedViewModel}"
+                        />
 
     </Grid>
 
