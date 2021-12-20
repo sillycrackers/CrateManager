@@ -4,6 +4,7 @@
                     xmlns:local="using:CrateManager.Styles/Styles1"
                     xmlns:viewModels="clr-namespace:CrateManager.ViewModels" 
                     xmlns:views="clr-namespace:CrateManager.Views" 
+                    xmlns:dropShadow="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
                     >
    
     
@@ -23,6 +24,11 @@
     <Style TargetType="TextBlock">
         <Setter Property="FontFamily" Value="#Varela Round"/>
     </Style>
+
+    <Style TargetType="TextBox">
+        <Setter Property="Padding" Value="2"/>
+    </Style>
+    
     
     <!-- UNIQUE STYLES -->
 
@@ -180,14 +186,15 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" Padding="10" CornerRadius="5">
 
-                            <Border.BitmapEffect>
-                                <DropShadowBitmapEffect Color="Black" Softness="1" ShadowDepth="5" Direction="-200"/>
-                            </Border.BitmapEffect>
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
-                        </Border>
-
+                        <dropShadow:SystemDropShadowChrome CornerRadius="5">
+                            <Border x:Name="MyBorder" Background="{TemplateBinding Background}" 
+                                    Padding="10" CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                            </Border>
+                        </dropShadow:SystemDropShadowChrome>
+                        
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="#009cbf"/>

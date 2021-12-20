@@ -2,63 +2,60 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dropShadow="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
              xmlns:local="clr-namespace:CrateManager.Views"
              mc:Ignorable="d" d:Width="800"
              >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="350"/>
-            <ColumnDefinition Width="*"/>
 
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
 
+
             <TextBlock Style="{StaticResource TextBlockOnDark}" Text="Create a Crate"
                        Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" FontSize="50"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20"
                        />
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Left" Margin="50,0,0,0">
+
+            <dropShadow:SystemDropShadowChrome CornerRadius="10">
+                <Border Background="{StaticResource CrateBlue}" Padding="30"
+                        HorizontalAlignment="Center" Height="400" CornerRadius="10"
+                        VerticalAlignment="Center" Panel.ZIndex="1"
+                        >
 
 
-            <Border Grid.Row="1" Background="{StaticResource CrateBlue}" Padding="30"
-                    HorizontalAlignment="Center" Height="400" Grid.Column="1" CornerRadius="10"
-                    Margin="20" VerticalAlignment="Center"
-                    >
-                <Border.BitmapEffect>
-                    <DropShadowBitmapEffect Color="Black" Softness="1" ShadowDepth="5" Direction="-200"/>
-                </Border.BitmapEffect>
-
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Width="175" 
-                            >
-                        <TextBlock Text="Crate Name:" Style="{StaticResource TextBlockOnCrate}"
-                                    Margin="10" FontSize="16" HorizontalAlignment="Left" 
-                                   MinWidth="150"
-                                   />
-                        <TextBox Text="{Binding Name, Mode=OneWayToSource}" Margin="10,0,10,10" 
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Width="175" 
+                                >
+                            <TextBlock Text="Crate Name:" Style="{StaticResource TextBlockOnCrate}"
+                                        Margin="10" FontSize="16" HorizontalAlignment="Left" 
+                                       MinWidth="150"
+                                       />
+                            <TextBox Text="{Binding Name, Mode=OneWayToSource}" Margin="10,0,10,10" 
                                  
-                                 />
-                        <TextBlock Text="Category:" Style="{StaticResource TextBlockOnCrate}"
-                                    Margin="10"  FontSize="16" HorizontalAlignment="Left"/>
-                        <ComboBox Margin="10,0,10,10" ItemsSource="{Binding Categories}"
+                                     />
+                            <TextBlock Text="Category:" Style="{StaticResource TextBlockOnCrate}"
+                                        Margin="10"  FontSize="16" HorizontalAlignment="Left"/>
+                            <ComboBox Margin="10,0,10,10" ItemsSource="{Binding Categories}"
                                  
-                                  />
-                        <TextBlock Text="Key Items:" Style="{StaticResource TextBlockOnCrate}"
-                                    Margin="10"  FontSize="16" HorizontalAlignment="Left"/>
-                        <TextBox Text="{Binding KeyItems, Mode=OneWayToSource}" Margin="10,0,10,10"
-                                    Height="100" TextWrapping="Wrap"
-                                    />
+                                      />
+                            <TextBlock Text="Key Items:" Style="{StaticResource TextBlockOnCrate}"
+                                        Margin="10"  FontSize="16" HorizontalAlignment="Left"/>
+                            <TextBox Text="{Binding KeyItems, Mode=OneWayToSource}" Margin="10,0,10,10"
+                                        Height="100" TextWrapping="Wrap"
+                                        />
 
-                    </StackPanel>
+                        </StackPanel>
 
-            </Border>
-
-        <StackPanel Margin="10" Grid.Column="2" Grid.Row="1" Width="175" HorizontalAlignment="Left" VerticalAlignment="Center">
+                </Border>
+            </dropShadow:SystemDropShadowChrome>
+            
+                    <StackPanel Margin="10" Grid.Row="1" Width="175" HorizontalAlignment="Left" VerticalAlignment="Center">
             <TextBlock  Text="Add New Category:" Style="{StaticResource TextBlockOnDark}"
                         Margin="10" FontSize="16" HorizontalAlignment="Center"
                         MinWidth="150"
@@ -70,6 +67,6 @@
                     HorizontalAlignment="Center" Width="100"
                     />
         </StackPanel>
-
+        </WrapPanel>
     </Grid>
 </UserControl>
