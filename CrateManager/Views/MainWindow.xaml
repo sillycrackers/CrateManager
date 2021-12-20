@@ -65,12 +65,12 @@
             </RadioButton>
             <RadioButton Content="Create New Crate" 
                          Style="{StaticResource MainMenuRadioButton}"
-                         Command="{Binding UpdateViewCommand}" CommandParameter="CreateCrateUC"
+                         Command="{Binding UpdateViewCommand}" CommandParameter="CreateCrateView"
                          >
             </RadioButton>
             <RadioButton Content="Edit Crate" 
                          Style="{StaticResource MainMenuRadioButton}"
-                         Command="{Binding UpdateViewCommand}" CommandParameter="CreateCrateUC"
+                         Command="{Binding UpdateViewCommand}" CommandParameter="CreateCrateView"
                          >
 
             </RadioButton>

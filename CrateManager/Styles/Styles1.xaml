@@ -33,7 +33,6 @@
     <Style x:Key="TextBlockOnDark" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="#Varela Round"/>
         <Setter Property="Foreground" Value="#AAAAAA"/>
-        <Setter Property="FontSize" Value="16"/>
     </Style>
     
     <!-- Data Templates -->

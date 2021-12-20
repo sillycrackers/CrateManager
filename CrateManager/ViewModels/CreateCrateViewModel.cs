@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace CrateManager.ViewModels
 {
@@ -51,13 +52,26 @@ namespace CrateManager.ViewModels
                 OnPropertyChanged("Name");
             }
         }
+        public string Test { get; set; }
 
-        public ObservableCollection<string> Categories;
+        public ICommand AddCategoryCommand { get; set; }
+
+        public ObservableCollection<string> Categories { get; set; }
 
         public CreateCrateViewModel()
         {
-            Categories = new ObservableCollection<string>() {"Electrical", "Mechanical", "Automation", "Miscellaneous"};
+            AddCategoryCommand = new AddCategoryCommand(this);
+            Categories = new ObservableCollection<string>();
+            Test = "This is a test";
+        }
 
+        public void ExecuteAddCategoryCommand(object parameter)
+        {
+            if (!Categories.Contains(parameter))
+            {
+                Categories.Add(parameter.ToString());
+            }
+            
         }
     }
 }

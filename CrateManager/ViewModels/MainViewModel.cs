@@ -17,7 +17,7 @@ namespace CrateManager.ViewModels
             set 
             { 
                 _selectedViewModel = value;
-                OnPropertyChanged(nameof(SelectedViewModel));
+                OnPropertyChanged("SelectedViewModel");
             }
         }
 
