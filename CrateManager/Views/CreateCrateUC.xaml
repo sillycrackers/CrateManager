@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CrateManager.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="915" d:DesignWidth="1700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -22,24 +22,45 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="3">
-            <TextBlock Text="Crate Name:" Style="{StaticResource TextBlockOnDark}"
-                       Margin="10"/>
-            <TextBox Text="{Binding Name, Mode=OneWayToSource}" Margin="10,0,10,10" />
-            <TextBlock Text="Category:" Style="{StaticResource TextBlockOnDark}"
-                       Margin="10"/>
-            <ComboBox Margin="10,0,10,10" ItemsSource="{Binding Categories}"/>
-            
-        </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="3" Grid.RowSpan="3">
+        <TextBlock Style="{StaticResource TextBlockOnDark}" Text="Create a Crate"
+                   Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" FontSize="50"
+                   HorizontalAlignment="Center" Margin="10"
+                   />
+
+
+            <Border Margin="40" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3"
+                    Background="{StaticResource CrateBlue}"
+                    >
+                <Border.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Softness="1" ShadowDepth="5" Direction="-200"/>
+                </Border.BitmapEffect>
+
+                <StackPanel Margin="30">
+                        <TextBlock Text="Crate Name:" Style="{StaticResource TextBlockOnCrate}"
+                                   Margin="10" FontSize="16"/>
+                        <TextBox Text="{Binding Name, Mode=OneWayToSource}" Margin="10,0,10,10" />
+                        <TextBlock Text="Category:" Style="{StaticResource TextBlockOnCrate}"
+                                   Margin="10"  FontSize="16"/>
+                        <ComboBox Margin="10,0,10,10" ItemsSource="{Binding Categories}"/>
+                        <TextBlock Text="Key Items:" Style="{StaticResource TextBlockOnCrate}"
+                                   Margin="10"  FontSize="16"/>
+                        <TextBox Text="{Binding KeyItems, Mode=OneWayToSource}" Margin="10,0,10,10"
+                                 Height="100" TextWrapping="Wrap"
+                                 />
+
+                    </StackPanel>
+
+            </Border>
+
+        <StackPanel Margin="10" Grid.Column="3" Grid.Row="2" >
             <TextBlock  Text="Add New Category:" Style="{StaticResource TextBlockOnDark}"
-                       Margin="10" FontSize="15"/>
-            <TextBox x:Name="AddCategoryTextBox" Text="{Binding Name, Mode=OneWayToSource}" Margin="10,0,10,10" />
-            <Button Content="Add" Margin="10,5,10,0" Command="{Binding AddCategoryCommand}" 
-                    CommandParameter="{Binding ElementName=AddCategoryTextBox, Path=Text}"/>
+                               Margin="10" FontSize="16" HorizontalAlignment="Center"/>
+            <TextBox x:Name="AddCategoryTextBox" Text="{Binding Name, Mode=OneWayToSource}" 
+                     Margin="80,0,80,10" HorizontalAlignment="Stretch"/>
+            <Button Content="Add" Margin="80,20,80,0" Command="{Binding AddCategoryCommand}" 
+                    CommandParameter="{Binding ElementName=AddCategoryTextBox, Path=Text}"
+                    HorizontalAlignment="Stretch"
+                    />
         </StackPanel>
-        
-        
     </Grid>
 </UserControl>

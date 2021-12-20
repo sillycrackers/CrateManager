@@ -7,16 +7,12 @@
                     >
    
     
-    <!-- 
-    Color Pallet 1 Blues
-    
-    Dark to Light
-    #0010D
-    #012326
-    #011C40
-    #024059
-    #03738C
-    -->
+
+    <SolidColorBrush x:Key="Darkest" Color="#00010D"/>
+    <SolidColorBrush x:Key="Darker" Color="#011C40"/>
+    <SolidColorBrush x:Key="Dark" Color="#012326"/>
+    <SolidColorBrush x:Key="CrateBlue" Color="#024059"/>
+    <SolidColorBrush x:Key="LightBlue" Color="#03738C"/>
 
     <!-- GLOBAL STYLES -->
 
@@ -33,6 +29,11 @@
     <Style x:Key="TextBlockOnDark" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="#Varela Round"/>
         <Setter Property="Foreground" Value="#AAAAAA"/>
+    </Style>
+
+    <Style x:Key="TextBlockOnCrate" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="#Varela Round"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
     
     <!-- Data Templates -->
@@ -174,7 +175,7 @@
             <Setter Property="Height" Value="150"/>
             <Setter Property="Width" Value="238"/>
             <Setter Property="Margin" Value="10"/>
-            <Setter Property="Background" Value="#03738C"/>
+            <Setter Property="Background" Value="{StaticResource CrateBlue}"/>
 
             <Setter Property="Template">
                 <Setter.Value>
