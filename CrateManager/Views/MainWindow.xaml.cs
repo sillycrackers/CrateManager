@@ -20,9 +20,5 @@ namespace CrateManager
             DataContext = new MainViewModel();
         }
 
-        private void ShowCrateView(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }

@@ -10,11 +10,11 @@ namespace CrateManager
 {
     public class UpdateViewCommand : ICommand
     {
-        private MainViewModel viewModel;
+        private MainViewModel _mainViewModel;
 
         public UpdateViewCommand(MainViewModel viewModel)
         {
-            this.viewModel = viewModel;
+            this._mainViewModel = viewModel;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -26,14 +26,7 @@ namespace CrateManager
 
         public void Execute(object parameter)
         {
-            if(parameter.ToString() == "CrateView")
-            {
-                viewModel.SelectedViewModel = new CrateViewModel();
-
-            }else if(parameter.ToString() == "NewCrateView")
-            {
-                viewModel.SelectedViewModel = new NewCrateViewModel();
-            }
+            _mainViewModel.ExecuteViewChange(parameter);
         }
     }
 }

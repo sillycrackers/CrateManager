@@ -20,68 +20,34 @@
 
     <!-- GLOBAL STYLES -->
 
-    <!-- Global ListView GridView Column Style -->
+    <Style TargetType="Window">
+        <Setter Property="Background" Value="#222222"/>
+    </Style>
 
-    <Style TargetType ="{x:Type Window}">
-        <Setter Property="Background" Value= "#00010D"/>
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="#Varela Round"/>
     </Style>
-    
-    
-    <Style TargetType="{x:Type GridViewColumnHeader}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
-                    <TextBlock Text="{TemplateBinding Content}" Padding="5" 
-                     Width="{TemplateBinding Width}" TextAlignment="Left" Foreground="WhiteSmoke"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
-    
-    
-    
-    
     
     <!-- UNIQUE STYLES -->
+
+    <Style x:Key="TextBlockOnDark" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="#Varela Round"/>
+        <Setter Property="Foreground" Value="#AAAAAA"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
     
     <!-- Data Templates -->
 
+    <DataTemplate DataType="{x:Type viewModels:CratesViewModel}">
+        <views:CratesViewUC/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModels:CreateCrateViewModel}">
+        <views:CreateCrateUC/>
+    </DataTemplate>
     <DataTemplate DataType="{x:Type viewModels:CrateViewModel}">
-        <views:CrateView/>
-    </DataTemplate>
-    <DataTemplate DataType="{x:Type viewModels:NewCrateViewModel}">
-        <views:NewCrateView/>
+        <views:CrateViewUC/>
     </DataTemplate>
 
-
-
-    <!-- ListView Item Template -->
-    
-    <DataTemplate x:Key="CustomTemplate">
-        <Grid VerticalAlignment="Stretch"
-                        HorizontalAlignment="Stretch"
-                        >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock Text="{Binding Path=Name}"
-                       HorizontalAlignment="Center"
-                       Grid.Column="0"
-                       />
-
-            <TextBlock Text="{Binding Path=Quantity}"
-                       HorizontalAlignment="Center"
-                       Grid.Column="1"
-                       />
-
-        </Grid>
-    </DataTemplate>
-
-
-    
     <!-- ListView Item Style -->
 
     <Style x:Key="ListViewItemStyle" TargetType="{x:Type ListViewItem}">
@@ -103,9 +69,9 @@
         </Style.Triggers>
     </Style>
 
-    <!-- Mane Menu Button -->
+    <!-- Main Menu Radio Button -->
 
-    <Style x:Key="MainMenuButton" 
+    <Style x:Key="MainMenuRadioButton" 
            BasedOn="{StaticResource {x:Type ToggleButton}}" 
            TargetType="{x:Type RadioButton}">
         <Style.Setters>
@@ -117,6 +83,7 @@
                               Background="{TemplateBinding Property=Background}">
 
                             <TextBlock Text="{TemplateBinding Property=Content}"
+                                       FontFamily="{TemplateBinding Property=FontFamily}"
                                        VerticalAlignment="Center"
                                        Margin="30,0,0,0"
                                        />
@@ -129,6 +96,9 @@
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="#555555"/>
                             </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#888888"/>
+                            </Trigger>
                         </ControlTemplate.Triggers>
 
                     </ControlTemplate>
@@ -137,11 +107,62 @@
 
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            
+            <Setter Property="Foreground" Value="#AAAAAA"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontFamily" Value="#Varela Round"/>
+
 
         </Style.Setters>
 
     </Style>
+
+    <!-- Main Menu Normal Button  -->
+    
+    <Style x:Key="MainMenuButton" 
+           BasedOn="{StaticResource {x:Type Button}}" 
+           TargetType="{x:Type Button}">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid VerticalAlignment="Stretch"
+                              HorizontalAlignment="Stretch"
+                              Background="{TemplateBinding Property=Background}">
+
+                            <TextBlock Text="{TemplateBinding Property=Content}"
+                                       VerticalAlignment="Center"
+                                       Margin="30,0,0,0"
+                                       />
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#555555"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#888888"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="#AAAAAA"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontFamily" Value="#Varela Round"/>
+
+
+        </Style.Setters>
+
+    </Style>
+
 
     <!-- Crate Button -->
     
@@ -150,42 +171,49 @@
            TargetType="{x:Type Button}"
            >
         <Style.Setters>
-            
-            <Setter Property="MinHeight" Value="200"/>
-            <Setter Property="MinWidth" Value="300"/>
-            <Setter Property="Height" Value="200"/>
-            <Setter Property="Width" Value="300"/>
+
+            <Setter Property="Height" Value="150"/>
+            <Setter Property="Width" Value="238"/>
             <Setter Property="Margin" Value="10"/>
             <Setter Property="Background" Value="#03738C"/>
 
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate>
-                        
-                        <ControlTemplate.Resources>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="Foreground" Value="White"/>
-                            </Style>
-                        </ControlTemplate.Resources>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" Padding="10">
 
-                        <StackPanel Background="{TemplateBinding Property=Background}">
-                            <TextBlock Text="{Binding CrateName}" FontSize="20" Margin="5"/>
-                            <TextBlock Text="{Binding Category}" FontSize="16" Margin="5"/>
-                        </StackPanel>
+                            <Border.BitmapEffect>
+                                <DropShadowBitmapEffect Color="Black" Softness="1" ShadowDepth="5" Direction="-200"/>
+                            </Border.BitmapEffect>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                        </Border>
 
-                        <!-- #00bce6 -->
-
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#009cbf"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#00bce6"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                     
                 </Setter.Value>
             </Setter>
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock x:Name="CrateName" Text="{Binding Name}" FontSize="20" Margin="5" Foreground="White"/>
+                            <TextBlock x:Name="CrateCategory" Text="{Binding Category}" FontSize="16" Margin="5" Foreground="White"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+
+
         </Style.Setters>
 
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#00bce6"/>
-            </Trigger>
-        </Style.Triggers>
 
     </Style>
 </ResourceDictionary>

@@ -7,21 +7,33 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\CrateView.xaml.cs">
+    <Compile Update="Views\CrateIconUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\NewCrateView.xaml.cs">
+    <Compile Update="Views\CratesViewUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CrateViewUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CreateCrateUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\CrateView.xaml">
+    <Page Update="Views\CrateIconUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CratesViewUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CrateViewUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CreateCrateUC.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\NewCrateView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

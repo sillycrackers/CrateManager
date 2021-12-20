@@ -5,14 +5,31 @@
 		{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};
 		{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}
 	</ProjectTypeGuids>
-	  <OutputType>WinExe</OutputType>
+	  <OutputType>Exe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>crate.ico</ApplicationIcon>
+    <AssemblyName>CrateManager</AssemblyName>
+    <StartupObject />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\VarelaRound.ttf" />
+    <None Remove="Images\crate.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\VarelaRound.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Images\crate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
 </Project>

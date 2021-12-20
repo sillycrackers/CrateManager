@@ -1,7 +1,7 @@
 ﻿CrateManager
 
 
-winexe
+exe
 C#
 .cs
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\
@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\Erik\source\repos\CrateManager\CrateManager\App.xaml
-41266662066
-
-14-570853180
+61913381468
+11463142408
+191722424161
 193-1891726104
-Styles\Styles1.xaml;Views\CrateView.xaml;Views\MainWindow.xaml;Views\NewCrateView.xaml;
+Styles\Styles1.xaml;Views\CrateIconUC.xaml;Views\CratesViewUC.xaml;Views\CrateViewUC.xaml;Views\CreateCrateUC.xaml;Views\MainWindow.xaml;
 
 False
 
