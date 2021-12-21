@@ -69,3 +69,4 @@ C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Cr
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\ref\CrateManager.dll
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.pdb
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.genruntimeconfig.cache
+C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.AssemblyReference.cache

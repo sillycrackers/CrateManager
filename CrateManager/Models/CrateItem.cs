@@ -13,7 +13,7 @@ namespace CrateManager.Models
             {
                 if (String.IsNullOrWhiteSpace(_name))
                 {
-                    return "No name";
+                    return "";
                 }
                 return _name;
             }
@@ -45,7 +45,7 @@ namespace CrateManager.Models
                 {
                     return _description;
                 }
-                return "Empty";
+                return "";
             }
             set
             {
@@ -74,6 +74,11 @@ namespace CrateManager.Models
         private string _name;
         private int _quantity;
         private string _partNumber;
+
+        public CrateItem()
+        {
+
+        }
 
         public CrateItem(string name)
         {

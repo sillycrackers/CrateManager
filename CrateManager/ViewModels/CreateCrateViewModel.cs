@@ -21,6 +21,10 @@ namespace CrateManager.ViewModels
         {
             get 
             {
+                if (string.IsNullOrWhiteSpace(_keyItems))
+                {
+                    return "";
+                }
                 return _keyItems;
             }
             set 
@@ -33,6 +37,10 @@ namespace CrateManager.ViewModels
         {
             get
             {
+                if (string.IsNullOrWhiteSpace(_category))
+                {
+                    return "";
+                }
                 return _category; 
             }
             set 
@@ -44,7 +52,11 @@ namespace CrateManager.ViewModels
         public string Name
         {
             get 
-            { 
+            {
+                if (string.IsNullOrWhiteSpace(_name))
+                {
+                    return "";
+                }
                 return _name; 
             }
             set 
