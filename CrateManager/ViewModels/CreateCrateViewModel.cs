@@ -14,7 +14,7 @@ namespace CrateManager.ViewModels
         private string _name;
         private string _category;
         private string _keyItems;
-        private CratesViewModel _cratesViewModel;
+        private MainViewModel _mainViewModel;
 
 
         public string KeyItems
@@ -59,7 +59,7 @@ namespace CrateManager.ViewModels
 
         public ObservableCollection<string> Categories { get; set; }
 
-        public CreateCrateViewModel(CratesViewModel cratesVM)
+        public CreateCrateViewModel(MainViewModel mainVM)
         {
             AddCategoryCommand = new AddCategoryCommand(this);
             AddNewCrateCommand = new AddNewCrateCommand(this);
@@ -67,7 +67,7 @@ namespace CrateManager.ViewModels
             Categories = new ObservableCollection<string>() {"Electrical", "Mechanical", "Misellaneous"};
 
             
-            _cratesViewModel = cratesVM;
+            _mainViewModel = mainVM;
         }
 
         public void ExecuteAddCategoryCommand(object parameter)
@@ -82,7 +82,8 @@ namespace CrateManager.ViewModels
         {
             if(!(string.IsNullOrWhiteSpace(Name) && string.IsNullOrWhiteSpace(Category) && string.IsNullOrWhiteSpace(KeyItems)))
             {
-                _cratesViewModel.AddNewCrate(_name, _category, _keyItems);
+                _mainViewModel.CratesViewModel.AddNewCrate(_name, _category, _keyItems);
+                _mainViewModel.SelectedViewModel = _mainViewModel.CratesViewModel;
             }
                
         }

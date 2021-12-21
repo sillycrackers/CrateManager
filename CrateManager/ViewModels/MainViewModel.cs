@@ -30,7 +30,7 @@ namespace CrateManager.ViewModels
             OpenCrateCommand = new OpenCrateCommand(this);
             CratesViewModel = new CratesViewModel();
             CrateViewModel = new CrateViewModel();
-            CreateCrateViewModel = new CreateCrateViewModel(CratesViewModel);
+            CreateCrateViewModel = new CreateCrateViewModel(this);
         }
 
         public void ExecuteViewChange(object parameter)

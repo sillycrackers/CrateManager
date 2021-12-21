@@ -213,6 +213,7 @@
                         <StackPanel>
                             <TextBlock x:Name="CrateName" Text="{Binding Name}" FontSize="20" Margin="5" Foreground="White"/>
                             <TextBlock x:Name="CrateCategory" Text="{Binding Category}" FontSize="16" Margin="5" Foreground="White"/>
+                            <TextBlock x:Name="KeyItems" Text="{Binding KeyItems}" FontSize="12" Margin="5" Foreground="White"/>
                         </StackPanel>
                     </DataTemplate>
                 </Setter.Value>
