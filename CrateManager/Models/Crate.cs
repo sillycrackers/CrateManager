@@ -15,6 +15,20 @@ namespace CrateManager.Models
         private string _name;
         private int _id;
         private string _category;
+        private string _keyItems;
+
+        public string KeyItems
+        {
+            get
+            {
+                return _keyItems;
+            }
+            set
+            {
+                _keyItems = value;
+                OnPropertyChanged("KeyItems");
+            }
+        }
 
         public string Category
         {
@@ -72,10 +86,11 @@ namespace CrateManager.Models
             ID = id;
         }
 
-        public Crate(string name, string category, int id) : this()
+        public Crate(string name, string category, string keyItems, int id) : this()
         {
             Name = name;
             Category = category;
+            KeyItems = keyItems;
             ID = id;
 
         }

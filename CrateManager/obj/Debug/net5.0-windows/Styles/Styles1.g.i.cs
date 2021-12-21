@@ -55,7 +55,7 @@ namespace CrateManager.Styles {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CrateManager;component/styles/styles1.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CrateManager;V1.0.0.0;component/styles/styles1.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Styles\Styles1.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
