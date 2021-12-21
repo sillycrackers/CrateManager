@@ -5,13 +5,61 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:viewModels="clr-namespace:CrateManager.ViewModels"
              xmlns:views="clr-namespace:CrateManager.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:dropShadow="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             mc:Ignorable="d" >
+
 
     <Grid>
-        <Button Style="{StaticResource CrateButton}" Content="{Binding}" 
-                Command="{Binding RelativeSource={RelativeSource FindAncestor, 
-                         AncestorType={x:Type Window}},Path=DataContext.OpenCrateCommand}" 
-                         CommandParameter="{Binding ID}"/>
+        <!-- Crate Button -->
+        <Button Content="{Binding}" Command="{Binding RelativeSource={RelativeSource FindAncestor, 
+                AncestorType={x:Type Window}},Path=DataContext.OpenCrateCommand}" 
+                CommandParameter="{Binding ID}" Height="150" Width="238" Margin="10"
+                Background="{StaticResource CrateBlue}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                >
+
+            <Button.Template>
+                
+                <ControlTemplate TargetType="{x:Type Button}">
+
+                        <dropShadow:SystemDropShadowChrome CornerRadius="5" Grid.Column="0" Grid.Row="0">
+                            <Border x:Name="MyBorder" Background="{TemplateBinding Background}" 
+                                    Padding="10" CornerRadius="5" HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    >
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                            </Border>
+                        </dropShadow:SystemDropShadowChrome>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="MyBorder" Property="Background" Value="#009cbf"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed"  Value="True">
+                            <Setter TargetName="MyBorder" Property="Background" Value="#00bce6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    
+                </ControlTemplate>
+            </Button.Template>
+
+            <Button.ContentTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock x:Name="CrateName" Text="{Binding Name}" FontSize="20" 
+                                   Margin="5" Foreground="White" HorizontalAlignment="Left"/>
+
+                        <TextBlock x:Name="CrateCategory" Text="{Binding Category}" FontSize="16" 
+                                   Margin="5" Foreground="White" HorizontalAlignment="Left"/>
+
+                        <TextBlock x:Name="KeyItems" Text="{Binding KeyItems}" HorizontalAlignment="Left"
+                                   FontSize="12" Margin="5" Foreground="White" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </DataTemplate>
+            </Button.ContentTemplate>
+
+        </Button>
     </Grid>
 </UserControl>
+
+

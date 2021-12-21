@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:viewModels="clr-namespace:CrateManager.ViewModels"
-        mc:Ignorable="d" 
+        mc:Ignorable="d"
         Title="Crate Manager" WindowState="Maximized" d:Height="1080" d:Width="1920" MinHeight="300" MinWidth="750"
         >
 
-    <Grid Margin="10">
+
+    
+
+    <Grid>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -21,6 +24,7 @@
         </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="125" MinHeight="125"/>
             <RowDefinition/>
             <RowDefinition/>
@@ -29,7 +33,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel  Grid.ColumnSpan="6" Grid.Row="0" HorizontalAlignment="Center"
+        <Border Background="#2A2A2A" Grid.Row="0" Grid.ColumnSpan="6"/>
+
+        <StackPanel  Grid.ColumnSpan="6" Grid.Row="1" HorizontalAlignment="Center"
                      Orientation="Horizontal" Margin="0,0,0,20"
                      >
             <Image Source="/Images/crate.png"  Width="60"
@@ -48,14 +54,9 @@
             
         </StackPanel>
 
-            <!-- Work Area -->
-        <Border Grid.Column="1" Grid.Row="1" 
-                Grid.ColumnSpan="5" Grid.RowSpan="5"
-                Background="#2A2A2A"
-                />
 
         <!-- Menu Area -->
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="5">
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.RowSpan="5">
 
             <RadioButton Content="Crates" 
                          Style="{StaticResource MainMenuRadioButton}"
@@ -83,10 +84,13 @@
             
         </StackPanel>
 
-        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" 
-                Grid.RowSpan="5" BorderThickness="1" BorderBrush="#444444">
-        <ContentControl Content="{Binding SelectedViewModel, Mode=TwoWay}"/>
+        <!-- Work Area -->
+        <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Background="#2A2A2A"
+                Grid.RowSpan="5" BorderThickness="1" BorderBrush="#444444" Margin="0,0,20,20">
+            <ContentControl Content="{Binding SelectedViewModel, Mode=TwoWay}"/>
         </Border>
+        
+
 
     </Grid>
 

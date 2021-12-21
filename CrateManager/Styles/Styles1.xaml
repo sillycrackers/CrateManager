@@ -15,7 +15,9 @@
     <SolidColorBrush x:Key="CrateBlue" Color="#024059"/>
     <SolidColorBrush x:Key="LightBlue" Color="#03738C"/>
 
+    <!--               -->
     <!-- GLOBAL STYLES -->
+    <!--               -->
 
     <Style TargetType="Window">
         <Setter Property="Background" Value="#222222"/>
@@ -30,18 +32,7 @@
     </Style>
     
     
-    <!-- UNIQUE STYLES -->
 
-    <Style x:Key="TextBlockOnDark" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="#Varela Round"/>
-        <Setter Property="Foreground" Value="#AAAAAA"/>
-    </Style>
-
-    <Style x:Key="TextBlockOnCrate" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="#Varela Round"/>
-        <Setter Property="Foreground" Value="White"/>
-    </Style>
-    
     <!-- Data Templates -->
 
     <DataTemplate DataType="{x:Type viewModels:CratesViewModel}">
@@ -53,6 +44,21 @@
     <DataTemplate DataType="{x:Type viewModels:CrateViewModel}">
         <views:CrateViewUC/>
     </DataTemplate>
+
+    <!--               -->
+    <!-- UNIQUE STYLES -->
+    <!--               -->
+
+    <Style x:Key="TextBlockOnDark" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="#Varela Round"/>
+        <Setter Property="Foreground" Value="#AAAAAA"/>
+    </Style>
+
+    <Style x:Key="TextBlockOnCrate" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="#Varela Round"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
 
     <!-- ListView Item Style -->
 
@@ -170,58 +176,5 @@
     </Style>
 
 
-    <!-- Crate Button -->
-    
-    <Style x:Key="CrateButton"
-           BasedOn="{StaticResource {x:Type Button}}"
-           TargetType="{x:Type Button}"
-           >
-        <Style.Setters>
-
-            <Setter Property="Height" Value="150"/>
-            <Setter Property="Width" Value="238"/>
-            <Setter Property="Margin" Value="10"/>
-            <Setter Property="Background" Value="{StaticResource CrateBlue}"/>
-
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-
-                        <dropShadow:SystemDropShadowChrome CornerRadius="5">
-                            <Border x:Name="MyBorder" Background="{TemplateBinding Background}" 
-                                    Padding="10" CornerRadius="5">
-                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
-                            </Border>
-                        </dropShadow:SystemDropShadowChrome>
-                        
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#009cbf"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#00bce6"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                    
-                </Setter.Value>
-            </Setter>
-            <Setter Property="ContentTemplate">
-                <Setter.Value>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock x:Name="CrateName" Text="{Binding Name}" FontSize="20" Margin="5" Foreground="White"/>
-                            <TextBlock x:Name="CrateCategory" Text="{Binding Category}" FontSize="16" Margin="5" Foreground="White"/>
-                            <TextBlock x:Name="KeyItems" Text="{Binding KeyItems}" FontSize="12" Margin="5" Foreground="White"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </Setter.Value>
-            </Setter>
-
-
-        </Style.Setters>
-
-
-    </Style>
+ 
 </ResourceDictionary>
