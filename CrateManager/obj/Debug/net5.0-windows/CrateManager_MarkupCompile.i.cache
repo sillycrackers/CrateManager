@@ -1,18 +1,18 @@
 ﻿CrateManager
 1.0.0.0
 
-exe
+winexe
 C#
 .cs
-C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\
 CrateManager
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\Erik\source\repos\CrateManager\CrateManager\App.xaml
+C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\App.xaml
 61913381468
 11463142408
-22-1049603850
+231105214341
 193-1891726104
 Styles\Styles1.xaml;Views\CrateIconUC.xaml;Views\CratesViewUC.xaml;Views\CrateViewUC.xaml;Views\CreateCrateUC.xaml;Views\MainWindow.xaml;
 

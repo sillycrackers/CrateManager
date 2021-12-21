@@ -11,16 +11,18 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition />
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
 
 
-            <TextBlock Style="{StaticResource TextBlockOnDark}" Text="Create a Crate"
-                       Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" FontSize="50"
-                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20"
-                       />
-        <WrapPanel Grid.Row="1" HorizontalAlignment="Left" Margin="50,0,0,0">
+        <TextBlock Style="{StaticResource TextBlockOnDark}" Text="Create a Crate"
+                    Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" FontSize="50"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10"
+                    />
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Left" Margin="50,10,0,10"
+                   
+                   >
 
             <dropShadow:SystemDropShadowChrome CornerRadius="10">
                 <Border Background="{StaticResource CrateBlue}" Padding="30"
@@ -41,7 +43,8 @@
                                      />
                             <TextBlock Text="Category:" Style="{StaticResource TextBlockOnCrate}"
                                         Margin="10"  FontSize="16" HorizontalAlignment="Left"/>
-                            <ComboBox Margin="10,0,10,10" ItemsSource="{Binding Categories}"
+                            <ComboBox Margin="10,0,10,10" ItemsSource="{Binding Categories}" 
+                                      SelectedValue="{Binding Category, Mode=OneWayToSource}"
                                  
                                       />
                             <TextBlock Text="Key Items:" Style="{StaticResource TextBlockOnCrate}"
@@ -49,8 +52,9 @@
                             <TextBox Text="{Binding KeyItems, Mode=OneWayToSource}" Margin="10,0,10,10"
                                         Height="100" TextWrapping="Wrap"
                                         />
-
-                        </StackPanel>
+                        <Button Content="Create" Margin="10" Command="{Binding AddNewCrateCommand}" 
+                                HorizontalAlignment="Center" Width="100"/>
+                    </StackPanel>
 
                 </Border>
             </dropShadow:SystemDropShadowChrome>
@@ -60,9 +64,8 @@
                         Margin="10" FontSize="16" HorizontalAlignment="Center"
                         MinWidth="150"
                         />
-            <TextBox x:Name="AddCategoryTextBox" Text="{Binding Name, Mode=OneWayToSource}" 
-                        Margin="10" HorizontalAlignment="Center" Width="100"/>
-            <Button Content="Add" Margin="10" Command="{Binding AddCategoryCommand}" 
+            <TextBox x:Name="AddCategoryTextBox" Margin="10" HorizontalAlignment="Center" Width="100"/>
+                <Button Content="Add" Margin="10" Command="{Binding AddCategoryCommand}" 
                     CommandParameter="{Binding ElementName=AddCategoryTextBox, Path=Text}"
                     HorizontalAlignment="Center" Width="100"
                     />

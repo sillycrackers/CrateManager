@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Qhc693lDFq0y8Hhz4cT+oUTRPeVFKGKINaernxV1BCW9ZFRQBrkn+L5sVGOl9vCMRSfVw6gqqVozWD+o9sN0+w==",
+  "dgSpecHash": "vTebey9vfE/mae4jG8Qs9ULJuuM1tahg8/gI+JNlx16rk71fubOlF0/rVT61VKsnkHtdi9YYBu4gfO5roRNB7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Erik\\source\\repos\\CrateManager\\CrateManager\\CrateManager.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Erik\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\5.0.12\\microsoft.netcore.app.host.win-x86.5.0.12.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\ewesterveld\\source\\repos\\CrateManager\\CrateManager\\CrateManager.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

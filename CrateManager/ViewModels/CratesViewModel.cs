@@ -35,7 +35,7 @@ namespace CrateManager.ViewModels
 
         public void ExecuteGenerateCrate()
         {
-            Crate crate = new Crate(string.Format("Crate {0}", Crates.Count + 1), "Miscellaneous", Crates.Count + 1);
+            Crate crate = new Crate(string.Format("Crate {0}", Crates.Count + 1), "Miscellaneous", "Shoes, Cable, Conduit, etc..", Crates.Count + 1);
             Crates.Add(crate);
             CrateViewModels.Add(new CrateViewModel(Crates[Crates.Count-1]));
         }
@@ -43,6 +43,13 @@ namespace CrateManager.ViewModels
         public void UpdateSelectedCrateViewModel(int id)
         {
             SelectedCrateViewModel = CrateViewModels[id-1];
+        }
+
+        public void AddNewCrate(string name, string category, string keyItems)
+        {
+            Crate crate = new Crate(name, category, keyItems, Crates.Count + 1);
+            Crates.Add(crate);
+            CrateViewModels.Add(new CrateViewModel(Crates[Crates.Count - 1]));
         }
     }
 }

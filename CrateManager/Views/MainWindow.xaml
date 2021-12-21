@@ -6,7 +6,7 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:viewModels="clr-namespace:CrateManager.ViewModels"
         mc:Ignorable="d" 
-        Title="MainWindow" WindowState="Maximized" d:Height="1080" d:Width="1920" MinHeight="300" MinWidth="750"
+        Title="Crate Manager" WindowState="Maximized" d:Height="1080" d:Width="1920" MinHeight="300" MinWidth="750"
         >
 
     <Grid Margin="10">
@@ -83,11 +83,10 @@
             
         </StackPanel>
 
-        <ContentControl Grid.Row="1" Grid.Column="1" 
-                        Grid.ColumnSpan="5" Grid.RowSpan="5" 
-                        Content="{Binding SelectedViewModel, Mode=TwoWay}"
-                        
-                        />
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" 
+                Grid.RowSpan="5" BorderThickness="1" BorderBrush="#444444">
+        <ContentControl Content="{Binding SelectedViewModel, Mode=TwoWay}"/>
+        </Border>
 
     </Grid>
 
