@@ -71,3 +71,4 @@ C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-win
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.ResolveComReference.cache
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\EditViewUC.g.cs
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\EditViewUC.baml
+C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.AssemblyReference.cache

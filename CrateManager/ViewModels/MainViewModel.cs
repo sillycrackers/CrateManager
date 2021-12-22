@@ -39,7 +39,7 @@ namespace CrateManager.ViewModels
 
             SelectedViewModel = CratesViewModel;
 
-            RegistryEdit.CreateSubkey();
+            //RegistryEdit.CreateSubkey();
         }
 
         public void ExecuteViewChange(object parameter)

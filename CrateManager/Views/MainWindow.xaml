@@ -115,7 +115,7 @@
         <!-- Menu Area -->
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.RowSpan="5">
 
-            <RadioButton Content="Crates" 
+            <RadioButton Content="Crates"
                          Style="{StaticResource MainMenuRadioButton}"
                          Command="{Binding UpdateViewCommand}" CommandParameter="CratesView"
                          >
