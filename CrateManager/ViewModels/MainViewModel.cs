@@ -62,12 +62,8 @@ namespace CrateManager.ViewModels
         public void ExecuteFileOpen()
         {
 
-            string path = FileManagement.SelectFile();
+            FileManagement.SaveFile(this, FileManagement.SelectFile());
 
-
-                Console.WriteLine(path);
-            
-            
         }
     }
 }

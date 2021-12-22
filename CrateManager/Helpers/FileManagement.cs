@@ -40,5 +40,12 @@ namespace CrateManager
             return null;
         }
 
+        public static void SaveFile(object o, string path)
+        {
+            string s = JsonSerializer.Serialize(o);
+
+            File.WriteAllText(path, s);
+        }
+
     }
 }
