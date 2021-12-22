@@ -10,7 +10,7 @@ namespace CrateManager.ViewModels
 
         public CratesViewModel CratesViewModel { get; set; }
         public CrateViewModel CrateViewModel { get; set; }
-        public CreateCrateViewModel CreateCrateViewModel { get; set; }
+        public EditViewModel EditViewModel { get; set; }
         public BaseViewModel SelectedViewModel
         {
             get { return _selectedViewModel; }
@@ -23,14 +23,16 @@ namespace CrateManager.ViewModels
 
         public ICommand UpdateViewCommand { get; set; }
         public ICommand OpenCrateCommand { get; set; }
+        public ICommand FileOpenCommand { get; set; }
 
         public MainViewModel()
         {
             UpdateViewCommand = new UpdateViewCommand(this);
             OpenCrateCommand = new OpenCrateCommand(this);
+            FileOpenCommand = new FileOpenCommand(this);
             CratesViewModel = new CratesViewModel();
             CrateViewModel = new CrateViewModel();
-            CreateCrateViewModel = new CreateCrateViewModel(this);
+            EditViewModel = new EditViewModel(this);
         }
 
         public void ExecuteViewChange(object parameter)
@@ -40,9 +42,9 @@ namespace CrateManager.ViewModels
             {
                 this.SelectedViewModel = CratesViewModel;
             }
-            else if (parameter.ToString() == "CreateCrateView")
+            else if (parameter.ToString() == "EditView")
             {
-                this.SelectedViewModel = CreateCrateViewModel;
+                this.SelectedViewModel = EditViewModel;
             }
             else if (parameter.ToString() == "CrateView")
             {
@@ -56,6 +58,16 @@ namespace CrateManager.ViewModels
 
             this.SelectedViewModel = CratesViewModel.SelectedCrateViewModel;
         }
+        
+        public void ExecuteFileOpen()
+        {
 
+            string path = FileManagement.SelectFile();
+
+
+                Console.WriteLine(path);
+            
+            
+        }
     }
 }

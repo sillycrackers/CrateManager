@@ -24,7 +24,7 @@
                   CanUserReorderColumns="False" MinColumnWidth="50" RowBackground="#555555"
                   BorderThickness="0" CellEditEnding="MyDataGrid_CellEditEnding"
                   AutoGenerateColumns="False" CanUserDeleteRows="True" CanUserResizeColumns="True"
-                  CanUserAddRows="True" Width="1200" Height="Auto" VerticalAlignment="Top" HorizontalScrollBarVisibility="Auto"
+                  CanUserAddRows="True" Width="Auto" Height="Auto" VerticalAlignment="Top" HorizontalScrollBarVisibility="Auto"
                   VerticalScrollBarVisibility="Visible"
                   >
         
@@ -37,7 +37,7 @@
                     <Setter Property="BorderBrush" Value="Black"/>
                     <Setter Property="Padding" Value="8"/>
                     <Setter Property="FontWeight" Value="DemiBold"/>
-                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="FontSize" Value="14"/>
                     <Setter Property="Margin" Value="0"/>
                     <Setter Property="FontFamily" Value="{StaticResource VarelaRound}"/>
                     
@@ -45,10 +45,16 @@
             </DataGrid.ColumnHeaderStyle>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="Auto"/>
-                <DataGridTextColumn Header="Part Number" Binding="{Binding PartNumber}" Width="Auto"/>
-                <DataGridTextColumn Header="Quanitity" Binding="{Binding Quantity}" Width="Auto"/>
-                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="900"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="150"/>
+                <DataGridTextColumn Header="Part Number" Binding="{Binding PartNumber}" Width="150"/>
+                <DataGridTextColumn Header="Quanitity" Binding="{Binding Quantity}" Width="Auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="600"/>
             </DataGrid.Columns>
 
             <DataGrid.CellStyle>

@@ -9,10 +9,15 @@
         Title="Crate Manager" WindowState="Maximized" d:Height="1080" d:Width="1920" MinHeight="300" MinWidth="750"
         >
 
-
+    <Window.Resources>
+        <Style TargetType="MenuItem">
+            <Setter Property="FontFamily" Value="{StaticResource VarelaRound}"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </Window.Resources>
     
-
-    <Grid>
+    
+        <Grid>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -24,7 +29,7 @@
         </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="125" MinHeight="125"/>
             <RowDefinition/>
             <RowDefinition/>
@@ -33,7 +38,59 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Border Background="#2A2A2A" Grid.Row="0" Grid.ColumnSpan="6"/>
+        <Border Background="#2A2A2A" Grid.Row="0" Grid.ColumnSpan="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+            <StackPanel VerticalAlignment="Stretch" Orientation="Horizontal" Height="Auto">
+
+                <Menu IsMainMenu="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                      FontFamily="{StaticResource VarelaRound}" 
+                      Width="80"
+                      >
+                    <Menu.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontFamily" Value="{StaticResource VarelaRound}"/>
+                            <Setter Property="FontSize" Value="18"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Margin" Value="5"/>
+                        </Style>
+                    </Menu.Resources>
+                    <Menu.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid/>
+                        </ItemsPanelTemplate>
+                    </Menu.ItemsPanel>
+
+                    <MenuItem HorizontalAlignment="Stretch" Padding="20,2,0,0" Background="#2a2a2a" 
+                              BorderThickness="0">
+
+                        <MenuItem.Header>
+                            <TextBlock Text="File" Foreground="White">
+                            </TextBlock>
+                        </MenuItem.Header>
+                        <MenuItem Command="{Binding FileOpenCommand}">
+                            <MenuItem.Header>
+                                <TextBlock Text="Open" Width="100"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <TextBlock Text="Save" Width="100"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem >
+                            <MenuItem.Header>
+                                <TextBlock Text="New" Width="100"/>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        
+
+                    </MenuItem>
+
+                </Menu>
+            </StackPanel>
+            
+        </Border>
+        
 
         <StackPanel  Grid.ColumnSpan="6" Grid.Row="1" HorizontalAlignment="Center"
                      Orientation="Horizontal" Margin="0,0,0,20"
@@ -64,17 +121,12 @@
                          >
                         
             </RadioButton>
-            <RadioButton Content="Create New Crate" 
+            <RadioButton Content="Edit" 
                          Style="{StaticResource MainMenuRadioButton}"
-                         Command="{Binding UpdateViewCommand}" CommandParameter="CreateCrateView"
+                         Command="{Binding UpdateViewCommand}" CommandParameter="EditView"
                          >
             </RadioButton>
-            <RadioButton Content="Edit Crate" 
-                         Style="{StaticResource MainMenuRadioButton}"
-                         Command="{Binding UpdateViewCommand}" CommandParameter="CreateCrateView"
-                         >
 
-            </RadioButton>
             <Button Content="Generate Crate" 
                     Style="{StaticResource MainMenuButton}"
                     Command="{Binding SelectedViewModel.GenerateCrateCommand}" CommandParameter="GenerateCrate">
@@ -85,8 +137,8 @@
         </StackPanel>
 
         <!-- Work Area -->
-        <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Background="#2A2A2A" Padding="30"
-                Grid.RowSpan="5" BorderThickness="1" BorderBrush="#444444" Margin="0,0,20,20">
+        <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Background="#2A2A2A" Padding="10,15,10,15"
+                Grid.RowSpan="5" BorderThickness="1" BorderBrush="#444444" Margin="0,0,0,20">
             <ContentControl Content="{Binding SelectedViewModel, Mode=TwoWay}"/>
         </Border>
         

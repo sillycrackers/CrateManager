@@ -8,16 +8,15 @@ using System.Windows.Input;
 
 namespace CrateManager
 {
-    class AddCategoryCommand : ICommand
+    public class FileOpenCommand : ICommand
     {
-        private EditViewModel _viewModel;
+        private MainViewModel _mainVM;
 
         public event EventHandler CanExecuteChanged;
 
-
-        public AddCategoryCommand(EditViewModel viewModel)
+        public FileOpenCommand(MainViewModel mainViewModel)
         {
-            _viewModel = viewModel;
+            _mainVM = mainViewModel;
         }
 
         public bool CanExecute(object parameter)
@@ -27,7 +26,7 @@ namespace CrateManager
 
         public void Execute(object parameter)
         {
-            _viewModel.ExecuteAddCategoryCommand(parameter);
+            _mainVM.ExecuteFileOpen();
         }
     }
 }

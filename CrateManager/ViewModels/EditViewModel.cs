@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace CrateManager.ViewModels
 {
-    public class CreateCrateViewModel : BaseViewModel
+    public class EditViewModel : BaseViewModel
     {
         
         private string _name;
@@ -71,7 +71,7 @@ namespace CrateManager.ViewModels
 
         public ObservableCollection<string> Categories { get; set; }
 
-        public CreateCrateViewModel(MainViewModel mainVM)
+        public EditViewModel(MainViewModel mainVM)
         {
             AddCategoryCommand = new AddCategoryCommand(this);
             AddNewCrateCommand = new AddNewCrateCommand(this);

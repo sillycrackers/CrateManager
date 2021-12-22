@@ -7,10 +7,10 @@ namespace CrateManager.Views
     /// <summary>
     /// Interaction logic for CreateCrateUC.xaml
     /// </summary>
-    public partial class CreateCrateUC : UserControl
+    public partial class EditViewUC : UserControl
     {
 
-        public CreateCrateUC()
+        public EditViewUC()
         {
             InitializeComponent();
         }

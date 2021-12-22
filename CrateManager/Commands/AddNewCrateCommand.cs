@@ -10,11 +10,11 @@ namespace CrateManager
 {
     public class AddNewCrateCommand : ICommand
     {
-        private CreateCrateViewModel _createCrateVM;
+        private EditViewModel _createCrateVM;
 
         public event EventHandler CanExecuteChanged;
 
-        public AddNewCrateCommand(CreateCrateViewModel createCrateViewModel)
+        public AddNewCrateCommand(EditViewModel createCrateViewModel)
         {
             _createCrateVM = createCrateViewModel;
         }
