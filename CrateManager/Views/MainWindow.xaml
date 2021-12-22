@@ -67,12 +67,12 @@
                             <TextBlock Text="File" Foreground="White">
                             </TextBlock>
                         </MenuItem.Header>
-                        <MenuItem Command="{Binding FileOpenCommand}">
+                        <MenuItem Command="{Binding LoadFileCommand}">
                             <MenuItem.Header>
-                                <TextBlock Text="Open" Width="100"/>
+                                <TextBlock Text="Load" Width="100"/>
                             </MenuItem.Header>
                         </MenuItem>
-                        <MenuItem>
+                        <MenuItem Command="{Binding SaveFileCommand}">
                             <MenuItem.Header>
                                 <TextBlock Text="Save" Width="100"/>
                             </MenuItem.Header>

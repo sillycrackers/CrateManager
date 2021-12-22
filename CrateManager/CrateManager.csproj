@@ -5,7 +5,7 @@
 		{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};
 		{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}
 	</ProjectTypeGuids>
-	  <OutputType>Exe</OutputType>
+	  <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>crate.ico</ApplicationIcon>

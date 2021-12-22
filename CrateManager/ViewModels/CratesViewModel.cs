@@ -2,13 +2,14 @@
 using System.Windows;
 using System.Windows.Input;
 using CrateManager.Models;
-using System.Linq;
-using System;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace CrateManager.ViewModels
 {
     public class CratesViewModel : BaseViewModel
     {
+        [JsonIgnore]
         public ICommand GenerateCrateCommand { get; set; }
 
         public ObservableCollection<Crate> Crates { get; set; }

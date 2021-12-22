@@ -2,7 +2,6 @@ C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\St
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateIconUC.g.cs
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CratesViewUC.g.cs
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateViewUC.g.cs
-C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CreateCrateUC.g.cs
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\MainWindow.g.cs
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager_Content.g.cs
@@ -22,7 +21,6 @@ C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\St
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateIconUC.baml
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CratesViewUC.baml
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CrateViewUC.baml
-C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\CreateCrateUC.baml
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\MainWindow.baml
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.g.resources
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.GeneratedMSBuildEditorConfig.editorconfig
@@ -33,7 +31,6 @@ C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Cr
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\ref\CrateManager.dll
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.pdb
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.genruntimeconfig.cache
-C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.AssemblyReference.cache
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\Images\crate.png
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\CrateManager.exe
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\CrateManager.deps.json
@@ -71,3 +68,6 @@ C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-win
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.pdb
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.genruntimeconfig.cache
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.AssemblyReference.cache
+C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.ResolveComReference.cache
+C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\EditViewUC.g.cs
+C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\EditViewUC.baml

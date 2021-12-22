@@ -8,13 +8,13 @@ using System.Windows.Input;
 
 namespace CrateManager
 {
-    public class FileOpenCommand : ICommand
+    public class SaveFileCommand : ICommand
     {
         private MainViewModel _mainVM;
 
         public event EventHandler CanExecuteChanged;
 
-        public FileOpenCommand(MainViewModel mainViewModel)
+        public SaveFileCommand(MainViewModel mainViewModel)
         {
             _mainVM = mainViewModel;
         }
@@ -26,7 +26,7 @@ namespace CrateManager
 
         public void Execute(object parameter)
         {
-            _mainVM.ExecuteFileOpen();
+            _mainVM.ExecuteSaveFile();
         }
     }
 }

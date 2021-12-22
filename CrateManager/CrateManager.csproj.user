@@ -16,7 +16,7 @@
     <Compile Update="Views\CrateViewUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\EditViewUC.cs">
+    <Compile Update="Views\EditViewUC.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

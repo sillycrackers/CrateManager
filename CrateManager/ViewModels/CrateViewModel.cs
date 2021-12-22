@@ -21,7 +21,7 @@ namespace CrateManager.ViewModels
             set
             {
                 _crate = value;
-                OnPropertyChanged(Crate.ToString());
+                OnPropertyChanged("Crate");
             }
         }
         public string test { get; set; } = "Hello World";

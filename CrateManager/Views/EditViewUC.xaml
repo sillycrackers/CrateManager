@@ -35,7 +35,7 @@
                                        MinWidth="150"
                                        />
                         <!-- Name max chars 10-->
-                            <TextBox x:Name="TextBoxName" MaxLength="10"
+                            <TextBox x:Name="TextBoxName" MaxLength="15"
                                      Text="{Binding Name, Mode=OneWayToSource}" Margin="10,0,10,10" 
                                      />
                             <TextBlock Text="Category:" Style="{StaticResource TextBlockOnCrate}"

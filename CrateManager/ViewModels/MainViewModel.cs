@@ -23,16 +23,23 @@ namespace CrateManager.ViewModels
 
         public ICommand UpdateViewCommand { get; set; }
         public ICommand OpenCrateCommand { get; set; }
-        public ICommand FileOpenCommand { get; set; }
+        public ICommand SaveFileCommand { get; set; }
+        public ICommand LoadFileCommand { get; set; }
 
         public MainViewModel()
         {
             UpdateViewCommand = new UpdateViewCommand(this);
             OpenCrateCommand = new OpenCrateCommand(this);
-            FileOpenCommand = new FileOpenCommand(this);
+            SaveFileCommand = new SaveFileCommand(this);
+            LoadFileCommand = new LoadFileCommand(this);
+
             CratesViewModel = new CratesViewModel();
             CrateViewModel = new CrateViewModel();
             EditViewModel = new EditViewModel(this);
+
+            SelectedViewModel = CratesViewModel;
+
+            RegistryEdit.CreateSubkey();
         }
 
         public void ExecuteViewChange(object parameter)
@@ -59,11 +66,25 @@ namespace CrateManager.ViewModels
             this.SelectedViewModel = CratesViewModel.SelectedCrateViewModel;
         }
         
-        public void ExecuteFileOpen()
+        public void ExecuteSaveFile()
         {
+            string path = FileManagement.SelectSaveFile();
 
-            FileManagement.SaveFile(this, FileManagement.SelectFile());
+            if (path != null)
+            {
+                FileManagement.SaveFile(CratesViewModel, path);
+            }
+        }
 
+        public void ExecuteLoadFile()
+        {
+            string path = FileManagement.SelectLoadFile();
+
+            if(path != null)
+            {
+                CratesViewModel = FileManagement.LoadFile<CratesViewModel>(path);
+            }
+  
         }
     }
 }
