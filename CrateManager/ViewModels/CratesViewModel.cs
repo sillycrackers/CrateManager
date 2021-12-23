@@ -20,10 +20,7 @@ namespace CrateManager.ViewModels
         
         public CrateViewModel SelectedCrateViewModel { get; set; }
 
-
-
         public int TestVal { get; set; } = 5;
-
 
         public CratesViewModel()
         {

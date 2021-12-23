@@ -28,5 +28,6 @@ namespace CrateManager.Views
         {
             TextBlockWarning.Visibility = System.Windows.Visibility.Hidden;
         }
+
     }
 }

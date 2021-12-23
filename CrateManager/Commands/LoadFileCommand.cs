@@ -10,13 +10,13 @@ namespace CrateManager
 {
     public class LoadFileCommand : ICommand
     {
-        private MainViewModel _mainVM;
+        private MainMenuViewModel _mainMenuVM;
 
         public event EventHandler CanExecuteChanged;
 
-        public LoadFileCommand(MainViewModel mainViewModel)
+        public LoadFileCommand(MainMenuViewModel mainMenuViewModel)
         {
-            _mainVM = mainViewModel;
+            _mainMenuVM = mainMenuViewModel;
         }
 
         public bool CanExecute(object parameter)
@@ -26,7 +26,7 @@ namespace CrateManager
 
         public void Execute(object parameter)
         {
-            _mainVM.ExecuteLoadFile();
+            _mainMenuVM.ExecuteLoadFile();
         }
     }
 }

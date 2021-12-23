@@ -17,8 +17,11 @@ namespace CrateManager
 
             InitializeComponent();
 
+            //Blank view
             DataContext = new MainViewModel();
-        }
 
+            //Create new Menu object passing in this window. When loading file it will assign it to the window's Datacontext
+            MainMenu.DataContext = new MainMenuViewModel(this);
+        }
     }
 }

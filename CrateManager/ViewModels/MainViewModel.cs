@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 using System.Windows;
 using System.Windows.Input;
 
@@ -7,10 +8,46 @@ namespace CrateManager.ViewModels
     public class MainViewModel : BaseViewModel
     {
         private BaseViewModel _selectedViewModel;
+        private CratesViewModel _cratesViewModel;
+        private CrateViewModel _crateViewModel;
+        private EditViewModel _editViewModel;
 
-        public CratesViewModel CratesViewModel { get; set; }
-        public CrateViewModel CrateViewModel { get; set; }
-        public EditViewModel EditViewModel { get; set; }
+        public CratesViewModel CratesViewModel {
+            get
+            {
+                return _cratesViewModel;
+            }
+
+            set
+            {
+                _cratesViewModel = value;
+                OnPropertyChanged("CratesViewModel");
+            }
+            }
+        public CrateViewModel CrateViewModel {
+            get
+            {
+                return _crateViewModel;
+            }
+            set
+            {
+                _crateViewModel = value;
+                OnPropertyChanged("CrateViewModel");
+            } 
+        
+        }
+        public EditViewModel EditViewModel 
+        {
+            get
+            {
+                return _editViewModel;
+            }
+            set
+            {
+                _editViewModel = value;
+                OnPropertyChanged("EditViewModel");
+            }
+        }
         public BaseViewModel SelectedViewModel
         {
             get { return _selectedViewModel; }
@@ -21,17 +58,17 @@ namespace CrateManager.ViewModels
             }
         }
 
+        [JsonIgnore]
         public ICommand UpdateViewCommand { get; set; }
+        [JsonIgnore]
         public ICommand OpenCrateCommand { get; set; }
-        public ICommand SaveFileCommand { get; set; }
-        public ICommand LoadFileCommand { get; set; }
+
 
         public MainViewModel()
         {
             UpdateViewCommand = new UpdateViewCommand(this);
             OpenCrateCommand = new OpenCrateCommand(this);
-            SaveFileCommand = new SaveFileCommand(this);
-            LoadFileCommand = new LoadFileCommand(this);
+
 
             CratesViewModel = new CratesViewModel();
             CrateViewModel = new CrateViewModel();
@@ -66,25 +103,6 @@ namespace CrateManager.ViewModels
             this.SelectedViewModel = CratesViewModel.SelectedCrateViewModel;
         }
         
-        public void ExecuteSaveFile()
-        {
-            string path = FileManagement.SelectSaveFile();
-
-            if (path != null)
-            {
-                FileManagement.SaveFile(CratesViewModel, path);
-            }
-        }
-
-        public void ExecuteLoadFile()
-        {
-            string path = FileManagement.SelectLoadFile();
-
-            if(path != null)
-            {
-                CratesViewModel = FileManagement.LoadFile<CratesViewModel>(path);
-            }
-  
-        }
+       
     }
 }

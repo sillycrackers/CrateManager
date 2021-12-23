@@ -1,8 +1,10 @@
-﻿using System;
+﻿using CrateManager.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -15,8 +17,20 @@ namespace CrateManager.ViewModels
         private string _category;
         private string _keyItems;
         private MainViewModel _mainViewModel;
+        private Crate _selectedCrate;
 
-
+        public Crate SelectedCrate
+        {
+            get
+            {
+                return _selectedCrate;
+            }
+            set
+            {
+                _selectedCrate = value;
+                OnPropertyChanged("SelectedCrate");
+            }
+        }
         public string KeyItems
         {
             get 
@@ -66,12 +80,19 @@ namespace CrateManager.ViewModels
             }
         }
 
+        [JsonIgnore]
         public ICommand AddCategoryCommand { get; set; }
+        [JsonIgnore]
         public ICommand AddNewCrateCommand { get; set; }
 
         public ObservableCollection<string> Categories { get; set; }
 
-        public EditViewModel(MainViewModel mainVM)
+        public EditViewModel()
+        {
+            _selectedCrate = new Crate();
+        }
+
+        public EditViewModel(MainViewModel mainVM) : base()
         {
             AddCategoryCommand = new AddCategoryCommand(this);
             AddNewCrateCommand = new AddNewCrateCommand(this);
