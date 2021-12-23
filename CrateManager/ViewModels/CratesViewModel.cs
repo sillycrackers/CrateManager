@@ -12,7 +12,21 @@ namespace CrateManager.ViewModels
         [JsonIgnore]
         public ICommand GenerateCrateCommand { get; set; }
 
-        public ObservableCollection<Crate> Crates { get; set; }
+        private ObservableCollection<Crate> _crates;
+
+        public ObservableCollection<Crate> Crates 
+        { 
+            get 
+            {
+                return _crates;
+            } 
+            set 
+            {
+                _crates = value; 
+                OnPropertyChanged("Crates"); 
+            } 
+        }
+
 
         public Crate SelectedCrate { get; set; }
 

@@ -16,6 +16,9 @@ namespace CrateManager.ViewModels
         private string _name;
         private string _category;
         private string _keyItems;
+        private string _newName;
+        private string _newCategory;
+        private string _newKeyItems;
         private MainViewModel _mainViewModel;
         private Crate _selectedCrate;
 
@@ -29,6 +32,55 @@ namespace CrateManager.ViewModels
             {
                 _selectedCrate = value;
                 OnPropertyChanged("SelectedCrate");
+            }
+        }
+        
+        public string NewName
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(_newName))
+                {
+                    return "";
+                }
+                return _newName;
+            }
+            set
+            {
+                _newName = value;
+                OnPropertyChanged("NewName");
+            }
+        }
+        public string NewKeyItems
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(_newKeyItems))
+                {
+                    return "";
+                }
+                return _newKeyItems;
+            }
+            set
+            {
+                _newKeyItems = value;
+                OnPropertyChanged("NewKeyItems");
+            }
+        }
+        public string NewCategory
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(_newCategory))
+                {
+                    return "";
+                }
+                return _newCategory;
+            }
+            set
+            {
+                _newCategory = value;
+                OnPropertyChanged("NewCategory");
             }
         }
         public string KeyItems
@@ -84,6 +136,10 @@ namespace CrateManager.ViewModels
         public ICommand AddCategoryCommand { get; set; }
         [JsonIgnore]
         public ICommand AddNewCrateCommand { get; set; }
+        [JsonIgnore]
+        public ICommand UpdateCrateCommand { get; set; }
+        [JsonIgnore]
+        public ICommand CrateSelectedChangedCommand { get; set; }
 
         public ObservableCollection<string> Categories { get; set; }
 
@@ -96,10 +152,11 @@ namespace CrateManager.ViewModels
         {
             AddCategoryCommand = new AddCategoryCommand(this);
             AddNewCrateCommand = new AddNewCrateCommand(this);
+            UpdateCrateCommand = new UpdateCrateCommand(this);
+            CrateSelectedChangedCommand = new CrateSelectedChangedCommand(this);
 
             Categories = new ObservableCollection<string>() {"Electrical", "Mechanical", "Miscellaneous"};
 
-            
             _mainViewModel = mainVM;
         }
 
@@ -113,11 +170,38 @@ namespace CrateManager.ViewModels
 
         public void ExecuteAddNewCrate()
         {
-            if(!string.IsNullOrWhiteSpace(Name) && !string.IsNullOrWhiteSpace(Category) && !string.IsNullOrWhiteSpace(KeyItems))
+            if(!string.IsNullOrWhiteSpace(_name) && !string.IsNullOrWhiteSpace(_category) && !string.IsNullOrWhiteSpace(_keyItems))
             {
                 _mainViewModel.CratesViewModel.AddNewCrate(_name, _category, _keyItems);
                 _mainViewModel.SelectedViewModel = _mainViewModel.CratesViewModel;
             }
+               
+        }
+
+        public void ExecuteUpdateCrate()
+        {
+            if (!string.IsNullOrWhiteSpace(_newName) && !string.IsNullOrWhiteSpace(_newCategory) && !string.IsNullOrWhiteSpace(_newKeyItems))
+            {
+
+                Crate result = _mainViewModel.CratesViewModel.Crates.FirstOrDefault(x => x.Name == SelectedCrate.Name);
+
+                result.Name = _newName;
+                result.Category = _newCategory;
+                result.KeyItems = _newKeyItems;
+            }
+        }
+
+        public void ExecuteCrateSelectedChanged()
+        {
+            if(SelectedCrate != null)
+            {
+                NewName = SelectedCrate.Name;
+                NewCategory = SelectedCrate.Category;
+                NewKeyItems = SelectedCrate.KeyItems;
+                
+                
+            }
+            
                
         }
     }

@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:dropShadow="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
-             xmlns:local="clr-namespace:CrateManager.Views"
              mc:Ignorable="d" d:Width="1200"
              >
     <Grid>
@@ -102,35 +102,44 @@
                                     >
                             <TextBlock Text="Select Crate:" Style="{StaticResource TextBlockOnCrate}"
                                             Margin="10"  FontSize="16" HorizontalAlignment="Left"/>
-                            <ComboBox x:Name="ComboBoxSelectCrate"
+                            <ComboBox x:Name="ComboBoxSelectCrate" 
                                           Margin="10,0,10,0" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path = DataContext.CratesViewModel.Crates, Mode=TwoWay}" 
-                                          SelectedValue="{Binding SelectedCrate, Mode=OneWayToSource}"
-                                          />
+                                           SelectedValuePath="Name"
+                                          SelectedItem="{Binding SelectedCrate, Mode=TwoWay}" 
+                                          >
+                            <!-- Event trigger SelectionChanged-->
+                                <behaviors:Interaction.Triggers>
+                                    <behaviors:EventTrigger EventName="SelectionChanged">
+                                        <behaviors:InvokeCommandAction Command="{Binding CrateSelectedChangedCommand}"/>
+                                    </behaviors:EventTrigger>
+                                </behaviors:Interaction.Triggers>
+
+                            </ComboBox>
                             <TextBlock Text="Crate Name:" Style="{StaticResource TextBlockOnCrate}"
                                             Margin="10" FontSize="16" HorizontalAlignment="Left" 
                                            MinWidth="150"
                                            />
                             <!-- Name max chars 10-->
                             <TextBox x:Name="TextBoxNameEdit" MaxLength="15"
-                                         Text="{Binding SelectedCrate.Name, Mode=TwoWay}" Margin="10,0,10,10" 
+                                         Text="{Binding NewName, Mode=TwoWay}" Margin="10,0,10,5" 
                                          />
                             <TextBlock Text="Category:" Style="{StaticResource TextBlockOnCrate}"
-                                            Margin="10"  FontSize="16" HorizontalAlignment="Left"/>
+                                            Margin="10,5,10,10"  FontSize="16" HorizontalAlignment="Left"/>
                             <ComboBox x:Name="ComboBoxCategoryEdit"
                                           Margin="10,0,10,10" ItemsSource="{Binding Categories}" 
-                                          SelectedValue="{Binding Category, Mode=OneWayToSource}"
+                                          SelectedValue="{Binding NewCategory, Mode=TwoWay}"
                                           />
                             <TextBlock Text="Key Items:" Style="{StaticResource TextBlockOnCrate}"
                                             Margin="10"  FontSize="16" HorizontalAlignment="Left"/>
 
                             <!-- Key Items max chars 68 -->
-                            <TextBox x:Name="TextBoxKeyItemsEdit" Text="{Binding KeyItems, Mode=OneWayToSource}" 
+                            <TextBox x:Name="TextBoxKeyItemsEdit" Text="{Binding NewKeyItems, Mode=TwoWay}" 
                                          Margin="10,0,10,00" Height="100" TextWrapping="Wrap" MaxLength="68"
                                             />
-                            <Button Content="Create" Margin="10" 
-                                    HorizontalAlignment="Center" Width="100" LostFocus="ButtonCreateLostFocus" />
+                            <Button Content="Update" Margin="10,20,10,10" Command="{Binding UpdateCrateCommand}"
+                                    HorizontalAlignment="Center" Width="100" LostFocus="ButtonEditLostFocus" Click="ClickUpdateEdit" />
                             <TextBlock x:Name="TextBlockWarningEdit" Text="Missing Information Above" Foreground="Red" FontSize="12"
-                                       HorizontalAlignment="Center" Visibility="Hidden"
+                                       HorizontalAlignment="Center" Visibility="Hidden" Margin="0,0,0,10"
                                        />
                         </StackPanel>
 

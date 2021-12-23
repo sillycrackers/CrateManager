@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "GgNoE6WCXz36+x7HRPSchmnQOvkmsRC7QawlMaeu9vVupYfkKP+SJYTsWVgiK0BbiUkpPdLerLxp0m+j8epm+w==",
+  "dgSpecHash": "BR4e98QdD66TxqrLyTSVepxZGjuYKE1hfEG0oYgfyJBOul1z7oAM79RCk9IKS6OnApRzWWL5JP8yaeJCIb/yAA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ewesterveld\\source\\repos\\CrateManager\\RegistryEdit\\RegistryEdit.csproj",
+  "projectFilePath": "C:\\Users\\Erik\\source\\repos\\CrateManager\\RegistryEdit\\RegistryEdit.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ewesterveld\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
-    "C:\\Users\\ewesterveld\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
-    "C:\\Users\\ewesterveld\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
-    "C:\\Users\\ewesterveld\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
+    "C:\\Users\\Erik\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Erik\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\Erik\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Erik\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\Erik\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
   ],
   "logs": []
 }

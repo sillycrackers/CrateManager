@@ -1,6 +1,7 @@
 ﻿using CrateManager.Models;
 using CrateManager.ViewModels;
 using CrateManager.Views;
+using System.ComponentModel;
 using System.Windows;
 
 
@@ -23,5 +24,6 @@ namespace CrateManager
             //Create new Menu object passing in this window. When loading file it will assign it to the window's Datacontext
             MainMenu.DataContext = new MainMenuViewModel(this);
         }
+
     }
 }

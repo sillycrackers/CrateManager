@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ewesterveld\\source\\repos\\CrateManager\\RegistryEdit\\RegistryEdit.csproj": {}
+    "C:\\Users\\Erik\\source\\repos\\CrateManager\\RegistryEdit\\RegistryEdit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ewesterveld\\source\\repos\\CrateManager\\RegistryEdit\\RegistryEdit.csproj": {
+    "C:\\Users\\Erik\\source\\repos\\CrateManager\\RegistryEdit\\RegistryEdit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ewesterveld\\source\\repos\\CrateManager\\RegistryEdit\\RegistryEdit.csproj",
+        "projectUniqueName": "C:\\Users\\Erik\\source\\repos\\CrateManager\\RegistryEdit\\RegistryEdit.csproj",
         "projectName": "RegistryEdit",
-        "projectPath": "C:\\Users\\ewesterveld\\source\\repos\\CrateManager\\RegistryEdit\\RegistryEdit.csproj",
-        "packagesPath": "C:\\Users\\ewesterveld\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ewesterveld\\source\\repos\\CrateManager\\RegistryEdit\\obj\\",
+        "projectPath": "C:\\Users\\Erik\\source\\repos\\CrateManager\\RegistryEdit\\RegistryEdit.csproj",
+        "packagesPath": "C:\\Users\\Erik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Erik\\source\\repos\\CrateManager\\RegistryEdit\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ewesterveld\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Erik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -59,12 +60,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.12, 5.0.12]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

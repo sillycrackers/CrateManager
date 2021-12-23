@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vTebey9vfE/mae4jG8Qs9ULJuuM1tahg8/gI+JNlx16rk71fubOlF0/rVT61VKsnkHtdi9YYBu4gfO5roRNB7w==",
+  "dgSpecHash": "uEfHJYKpGPsy3t8d4fAg2zuAz9ufZ8MeRwUi1mK0KxJ5tJ2YHCaqJW41Kq/tnvs29UloZSehxh/Iwaa7PmQing==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ewesterveld\\source\\repos\\CrateManager\\CrateManager\\CrateManager.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Erik\\source\\repos\\CrateManager\\CrateManager\\CrateManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Erik\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\Erik\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\5.0.12\\microsoft.netcore.app.host.win-x86.5.0.12.nupkg.sha512"
+  ],
   "logs": []
 }

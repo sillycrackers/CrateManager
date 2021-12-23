@@ -72,3 +72,5 @@ C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-win
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.pdb
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.genruntimeconfig.cache
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.AssemblyReference.cache
+C:\Users\Erik\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.CopyComplete
