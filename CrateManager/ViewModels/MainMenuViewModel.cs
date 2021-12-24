@@ -17,15 +17,15 @@ namespace CrateManager.ViewModels
         public ICommand SaveFileCommand { get; set; }
         public ICommand SaveAsFileCommand { get; set; }
         public ICommand LoadFileCommand { get; set; }
-
-
+ 
 
         public MainMenuViewModel(Window window)
         {
             SaveFileCommand = new SaveFileCommand(this);
             SaveAsFileCommand = new SaveAsFileCommand(this);
             LoadFileCommand = new LoadFileCommand(this);
-            _mainVM = new MainViewModel();
+
+            _mainVM = (MainViewModel)window.DataContext;
             _window = window;
         }
 
@@ -44,7 +44,7 @@ namespace CrateManager.ViewModels
 
         public void ExecuteSaveAsFile()
         {
-            string path = FileManagement.SelectSaveFile();
+            string path = FileManagement.SelectSaveFile(FileManagement.FileType.Crate);
 
             if (path != null)
             {
@@ -55,7 +55,7 @@ namespace CrateManager.ViewModels
 
         public void ExecuteLoadFile()
         {
-            string path = FileManagement.SelectLoadFile();
+            string path = FileManagement.SelectLoadFile(FileManagement.FileType.Crate);
 
             if (path != null)
             {

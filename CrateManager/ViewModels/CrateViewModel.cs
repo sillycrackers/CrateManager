@@ -31,7 +31,7 @@ namespace CrateManager.ViewModels
         }
 
         public CrateViewModel(Crate crate)
-            : base()
+            : this()
         {
             Crate = crate;
 

@@ -13,6 +13,11 @@ namespace CrateManager
 {
     public static class FileManagement
     {
+        public enum FileType
+        {
+            Crate,
+            Csv
+        }
 
         static FileManagement()
         {
@@ -24,13 +29,26 @@ namespace CrateManager
         /// It will return string of file path if succesful or Null if failed
         /// </summary>
         /// <returns></returns>
-        public static string SelectLoadFile()
+        public static string SelectLoadFile(FileType fileType)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            openFileDialog.Filter = "Crate File|*.crate";
-            openFileDialog.DefaultExt = ".crate";
-            openFileDialog.Title = "Load a Crate File";
+            switch (fileType)
+            {
+                case FileType.Crate:
+                    openFileDialog.Filter = "Crate File|*.crate";
+                    openFileDialog.DefaultExt = ".crate";
+                    openFileDialog.Title = "Load a Crate File";
+                    break;
+                case FileType.Csv:
+                    openFileDialog.Filter = "CSV File|*.csv";
+                    openFileDialog.DefaultExt = ".csv";
+                    openFileDialog.Title = "Load a CSV File";
+                    break;
+            }
+            
+           
+
             openFileDialog.CheckFileExists = true;
             openFileDialog.AddExtension = true;
             openFileDialog.CheckPathExists = true;
@@ -48,14 +66,27 @@ namespace CrateManager
             return null;
         }
 
-        public static string SelectSaveFile()
+        public static string SelectSaveFile(FileType fileType)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
+
+            switch (fileType)
+            {
+                case FileType.Crate:
+                    saveFileDialog.Title = "Save a Crate File";
+                    saveFileDialog.Filter = "Crate File|*.crate";
+                    break;
+                case FileType.Csv:
+                    saveFileDialog.Title = "Save a CSV File";
+                    saveFileDialog.Filter = "CSV File|*.csv";
+                    break;
+            }
+
+
             Nullable<bool> result = false;
 
-            saveFileDialog.Title = "Save a Crate File";
-            saveFileDialog.Filter = "Crate File|*.crate";
+
             saveFileDialog.AddExtension = true;
             saveFileDialog.OverwritePrompt = true;
 
@@ -78,12 +109,21 @@ namespace CrateManager
             File.WriteAllText(path, s);
         }
 
-        public static T LoadFile<T>(string path)
+        public static T LoadFile<T>(string path) where T : new()
         {
             string s = File.ReadAllText(path);
 
             return (T)JsonSerializer.Deserialize(s, typeof(T));
         }
 
+        public static void ExportCSV(string output)
+        {
+            string path = SelectSaveFile(FileType.Csv);
+
+            if (!string.IsNullOrWhiteSpace(path))
+            {
+                File.WriteAllText(path, output);
+            }
+        }
     }
 }

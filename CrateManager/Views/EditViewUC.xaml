@@ -32,11 +32,29 @@
             <StackPanel>
                 
                 <!-- Add new Crate -->
-                
-                <TextBlock Style="{StaticResource TextBlockOnDark}" Text="Add New Crate"
-                    Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" FontSize="40"
-                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10"
-                    />
+                <StackPanel Orientation="Horizontal" Margin="0,0,20,0">
+                    
+                    <Rectangle Width="20" Height="20" Margin="15,2,15,0" VerticalAlignment="Center">
+                        <Rectangle.Fill>
+                            <DrawingBrush>
+                                <DrawingBrush.Drawing>
+                                    <DrawingGroup>
+                                        <DrawingGroup.Children>
+                                            <GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
+                                            <GeometryDrawing Brush="#FF388934" Geometry="F1M6.0003,-0.000199999999999534L6.0003,5.9998 0.000300000000000189,5.9998 0.000300000000000189,9.9998 6.0003,9.9998 6.0003,15.9998 10.0003,15.9998 10.0003,9.9998 16.0003,9.9998 16.0003,5.9998 10.0003,5.9998 10.0003,-0.000199999999999534z" />
+                                            <GeometryDrawing Brush="#FF388934" Geometry="F1M15,9L9,9 9,15 7,15 7,9 1,9 1,7 7,7 7,1 9,1 9,7 15,7z" />
+                                        </DrawingGroup.Children>
+                                    </DrawingGroup>
+                                </DrawingBrush.Drawing>
+                            </DrawingBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    
+                    <TextBlock Style="{StaticResource TextBlockOnDark}" Text="Add New Crate"
+                               FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                               Margin="0,10,0,10"
+                        />
+                </StackPanel>
                 
                 <dropShadow:SystemDropShadowChrome CornerRadius="10" HorizontalAlignment="Center">
                     <Border Background="{StaticResource CrateBlue}" Padding="30,15,30,15"

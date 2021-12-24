@@ -9,8 +9,6 @@ namespace CrateManager.ViewModels
 {
     public class CratesViewModel : BaseViewModel
     {
-        [JsonIgnore]
-        public ICommand GenerateCrateCommand { get; set; }
 
         private ObservableCollection<Crate> _crates;
 
@@ -26,15 +24,12 @@ namespace CrateManager.ViewModels
                 OnPropertyChanged("Crates"); 
             } 
         }
-
-
         public Crate SelectedCrate { get; set; }
-
         public ObservableCollection<CrateViewModel> CrateViewModels { get; set; }
-        
         public CrateViewModel SelectedCrateViewModel { get; set; }
-
         public int TestVal { get; set; } = 5;
+        [JsonIgnore]
+        public ICommand GenerateCrateCommand { get; set; }
 
         public CratesViewModel()
         {

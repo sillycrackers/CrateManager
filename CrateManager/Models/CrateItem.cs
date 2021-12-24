@@ -84,6 +84,24 @@ namespace CrateManager.Models
         {
             Name = name;
         }
+        public CrateItem(string name, string partNumber)
+        {
+            Name = name;
+            PartNumber = partNumber;
+        }
+        public CrateItem(string name, string partNumber, int quantity)
+        {
+            Name = name;
+            PartNumber = partNumber;
+            Quantity = quantity;
+        }
+        public CrateItem(string name, string partNumber, int quantity, string description)
+        {
+            Name = name;
+            PartNumber = partNumber;
+            Quantity = quantity;
+            Description = description;
+        }
 
     }
 }

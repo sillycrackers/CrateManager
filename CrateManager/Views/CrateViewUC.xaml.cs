@@ -29,9 +29,6 @@ namespace CrateManager.Views
         private void MyDataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
 
-        //    DataGridLength dl = new DataGridLength(1.0, DataGridLengthUnitType.SizeToCells);
-
-        //    MyDataGrid.CurrentColumn.Width = dl.Value;
         }
     }
 

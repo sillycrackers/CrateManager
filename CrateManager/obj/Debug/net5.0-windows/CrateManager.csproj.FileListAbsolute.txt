@@ -34,7 +34,6 @@ C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Cr
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.ResolveComReference.cache
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\EditViewUC.g.cs
 C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Views\EditViewUC.baml
-C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.AssemblyReference.cache
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\Images\crate.png
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\CrateManager.exe
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\CrateManager.deps.json
@@ -76,3 +75,4 @@ C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\Cr
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\bin\Debug\net5.0-windows\Microsoft.Xaml.Behaviors.dll
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.CopyComplete
 C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.AssemblyReference.cache
+C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\CrateManager.csproj.AssemblyReference.cache
