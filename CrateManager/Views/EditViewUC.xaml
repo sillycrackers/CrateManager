@@ -7,6 +7,18 @@
              xmlns:dropShadow="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
              mc:Ignorable="d" d:Width="1200"
              >
+
+    <UserControl.Resources>
+        <Style x:Key="EditButton" TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="FontFamily" Value="{StaticResource VarelaRound}"/>
+        </Style>
+
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+
+    </UserControl.Resources>
+    
     <Grid>
 
         <Grid.RowDefinitions>
@@ -57,7 +69,8 @@
                                 <TextBox x:Name="TextBoxKeyItems" Text="{Binding KeyItems, Mode=OneWayToSource}" 
                                          Margin="10,0,10,10" Height="100" TextWrapping="Wrap" MaxLength="68"
                                             />
-                            <Button Content="Create" Margin="10" Command="{Binding AddNewCrateCommand}" 
+                            <Button Style="{StaticResource EditButton}"
+                                    Content="Create" Margin="10" Command="{Binding AddNewCrateCommand}" 
                                     HorizontalAlignment="Center" Width="100" Click="ClickCreate" LostFocus="ButtonCreateLostFocus" />
                             <TextBlock x:Name="TextBlockWarning" Text="Missing Information Above" Foreground="Red" FontSize="12"
                                        HorizontalAlignment="Center" Visibility="Hidden"
@@ -76,21 +89,38 @@
                             MinWidth="150"
                             />
                 <TextBox x:Name="AddCategoryTextBox" Margin="10" HorizontalAlignment="Center" Width="100"/>
-                <Button x:Name="ButtonCreate" Content="Add" Margin="10" Command="{Binding AddCategoryCommand}" 
-                    CommandParameter="{Binding ElementName=AddCategoryTextBox, Path=Text}"
-                    HorizontalAlignment="Center" Width="100"
-                    />
+                <Button Style="{StaticResource EditButton}"
+                        x:Name="ButtonCreate" Content="Add" Margin="10" Command="{Binding AddCategoryCommand}" 
+                        CommandParameter="{Binding ElementName=AddCategoryTextBox, Path=Text}"
+                        HorizontalAlignment="Center" Width="100"
+                        />
             </StackPanel>
 
             <!-- Edit existing Crate -->
             
-            <StackPanel>
+            <StackPanel >
                 <TextBlock Style="{StaticResource TextBlockOnDark}" Text="Edit Existing Crate"
                     Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" FontSize="40"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,10"
                     />
-
-                <dropShadow:SystemDropShadowChrome CornerRadius="10" HorizontalAlignment="Center">
+                <TextBlock Text="Select Crate:" Style="{StaticResource TextBlockOnCrate}"
+                           Margin="10"  FontSize="16" HorizontalAlignment="Center"/>
+                <ComboBox x:Name="ComboBoxSelectCrate" 
+                                          Margin="60,0,60,20" ItemsSource="{Binding MainViewModel.CratesViewModel.Crates, Mode=TwoWay}" 
+                                          DisplayMemberPath="Name"
+                                          SelectedItem="{Binding SelectedCrate, Mode=OneWayToSource}" 
+                                          >
+                    <!-- Event trigger SelectionChanged-->
+                    <behaviors:Interaction.Triggers>
+                        <behaviors:EventTrigger EventName="SelectionChanged">
+                            <behaviors:InvokeCommandAction Command="{Binding CrateSelectedChangedCommand}"/>
+                        </behaviors:EventTrigger>
+                    </behaviors:Interaction.Triggers>
+                    
+                </ComboBox>
+                <dropShadow:SystemDropShadowChrome CornerRadius="10" HorizontalAlignment="Center"
+                                                   Visibility="{Binding Path=ItemSelected, Converter={StaticResource BoolToVis}}" 
+                                                   >
                     <Border Background="{StaticResource CrateBlue}" Padding="30,15,30,0"
                             HorizontalAlignment="Center" Height="Auto" CornerRadius="10"
                             VerticalAlignment="Center" Panel.ZIndex="1"
@@ -100,21 +130,7 @@
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
                                     Width="175" 
                                     >
-                            <TextBlock Text="Select Crate:" Style="{StaticResource TextBlockOnCrate}"
-                                            Margin="10"  FontSize="16" HorizontalAlignment="Left"/>
-                            <ComboBox x:Name="ComboBoxSelectCrate" 
-                                          Margin="10,0,10,0" ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path = DataContext.CratesViewModel.Crates, Mode=TwoWay}" 
-                                           SelectedValuePath="Name"
-                                          SelectedItem="{Binding SelectedCrate, Mode=TwoWay}" 
-                                          >
-                            <!-- Event trigger SelectionChanged-->
-                                <behaviors:Interaction.Triggers>
-                                    <behaviors:EventTrigger EventName="SelectionChanged">
-                                        <behaviors:InvokeCommandAction Command="{Binding CrateSelectedChangedCommand}"/>
-                                    </behaviors:EventTrigger>
-                                </behaviors:Interaction.Triggers>
-
-                            </ComboBox>
+                           
                             <TextBlock Text="Crate Name:" Style="{StaticResource TextBlockOnCrate}"
                                             Margin="10" FontSize="16" HorizontalAlignment="Left" 
                                            MinWidth="150"
@@ -136,7 +152,8 @@
                             <TextBox x:Name="TextBoxKeyItemsEdit" Text="{Binding NewKeyItems, Mode=TwoWay}" 
                                          Margin="10,0,10,00" Height="100" TextWrapping="Wrap" MaxLength="68"
                                             />
-                            <Button Content="Update" Margin="10,20,10,10" Command="{Binding UpdateCrateCommand}"
+                            <Button Style="{StaticResource EditButton}"
+                                    Content="Update" Margin="10,20,10,10" Command="{Binding UpdateCrateCommand}"
                                     HorizontalAlignment="Center" Width="100" LostFocus="ButtonEditLostFocus" Click="ClickUpdateEdit" />
                             <TextBlock x:Name="TextBlockWarningEdit" Text="Missing Information Above" Foreground="Red" FontSize="12"
                                        HorizontalAlignment="Center" Visibility="Hidden" Margin="0,0,0,10"

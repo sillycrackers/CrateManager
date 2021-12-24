@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="Styles/Styles1.xaml"/>
 
                 <ResourceDictionary>
-                    <FontFamily x:Key="VarelaRound">pack://application:,,,/Fonts/#Varela Round</FontFamily>
+                    <FontFamily x:Key="VarelaRound"> pack://application:,,,/Fonts/#Varela Round</FontFamily>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

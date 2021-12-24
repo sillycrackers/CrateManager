@@ -10,7 +10,6 @@ namespace CrateManager.ViewModels
         private BaseViewModel _selectedViewModel;
         private CratesViewModel _cratesViewModel;
         private CrateViewModel _crateViewModel;
-        //private EditViewModel _editViewModel;
 
         public CratesViewModel CratesViewModel {
             get
@@ -36,18 +35,6 @@ namespace CrateManager.ViewModels
             } 
         
         }
-        //public EditViewModel EditViewModel 
-        //{
-        //    get
-        //    {
-        //        return _editViewModel;
-        //    }
-        //    set
-        //    {
-        //        _editViewModel = value;
-        //        OnPropertyChanged("EditViewModel");
-        //    }
-        //}
         public BaseViewModel SelectedViewModel
         {
             get { return _selectedViewModel; }
@@ -72,7 +59,7 @@ namespace CrateManager.ViewModels
 
             CratesViewModel = new CratesViewModel();
             CrateViewModel = new CrateViewModel();
-            //EditViewModel = new EditViewModel(this);
+            
 
             SelectedViewModel = CratesViewModel;
 

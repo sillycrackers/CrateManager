@@ -1,11 +1,8 @@
 ﻿using CrateManager.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace CrateManager.ViewModels
@@ -21,6 +18,7 @@ namespace CrateManager.ViewModels
         private string _newKeyItems;
         private MainViewModel _mainViewModel;
         private Crate _selectedCrate;
+        private bool _itemSelected;
 
         public Crate SelectedCrate
         {
@@ -35,6 +33,18 @@ namespace CrateManager.ViewModels
             }
         }
         
+        public MainViewModel MainViewModel
+        {
+            get
+            {
+                return _mainViewModel;
+            }
+            set
+            {
+                _mainViewModel = value;
+                OnPropertyChanged("MainViewModel");
+            }
+        }
         public string NewName
         {
             get
@@ -131,6 +141,18 @@ namespace CrateManager.ViewModels
                 OnPropertyChanged("Name");
             }
         }
+        public bool ItemSelected
+        {
+            get
+            {
+                return _itemSelected;
+            }
+            set
+            {
+                _itemSelected = value;
+                OnPropertyChanged("ItemSelected");
+            }
+        }
 
         [JsonIgnore]
         public ICommand AddCategoryCommand { get; set; }
@@ -198,11 +220,9 @@ namespace CrateManager.ViewModels
                 NewName = SelectedCrate.Name;
                 NewCategory = SelectedCrate.Category;
                 NewKeyItems = SelectedCrate.KeyItems;
-                
-                
+                ItemSelected = true;
             }
             
-               
         }
     }
 }
