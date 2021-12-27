@@ -32,7 +32,7 @@
             <StackPanel>
                 
                 <!-- Add new Crate -->
-                <StackPanel Orientation="Horizontal" Margin="0,0,20,0">
+                <StackPanel Orientation="Horizontal" Margin="0,0,30,0">
                     
                     <Rectangle Width="20" Height="20" Margin="15,2,15,0" VerticalAlignment="Center">
                         <Rectangle.Fill>
@@ -106,7 +106,8 @@
                             Margin="10" FontSize="16" HorizontalAlignment="Center"
                             MinWidth="150"
                             />
-                <TextBox x:Name="AddCategoryTextBox" Margin="10" HorizontalAlignment="Center" Width="100"/>
+                <TextBox x:Name="AddCategoryTextBox" Margin="10" HorizontalAlignment="Center"
+                         Width="100" MaxLength="20"/>
                 <Button Style="{StaticResource EditButton}"
                         x:Name="ButtonCreate" Content="Add" Margin="10" Command="{Binding AddCategoryCommand}" 
                         CommandParameter="{Binding ElementName=AddCategoryTextBox, Path=Text}"

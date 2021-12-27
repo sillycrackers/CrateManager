@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrateManager", "CrateManager\CrateManager.csproj", "{3A799087-DFC7-409B-B0C8-AC8E98CD2F74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistryEdit", "RegistryEdit\RegistryEdit.csproj", "{3632D52A-A5B2-428F-898B-7F8BFE704C10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistryEdit", "RegistryEdit\RegistryEdit.csproj", "{3632D52A-A5B2-428F-898B-7F8BFE704C10}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{06CA57E2-BBD6-48AB-9295-854B64B90109}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,8 @@ Global
 		{3632D52A-A5B2-428F-898B-7F8BFE704C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3632D52A-A5B2-428F-898B-7F8BFE704C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3632D52A-A5B2-428F-898B-7F8BFE704C10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CA57E2-BBD6-48AB-9295-854B64B90109}.Debug|Any CPU.ActiveCfg = Debug
+		{06CA57E2-BBD6-48AB-9295-854B64B90109}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

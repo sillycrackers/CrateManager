@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CrateManager.Views"
+             xmlns:local="clr-namespace:CrateManager.Views" 
              mc:Ignorable="d" 
               d:DesignHeight="915" d:DesignWidth="1700">
     <Grid Margin="10">
@@ -17,20 +17,25 @@
                    FontSize="30" Foreground="White" 
                    Margin="10" FontWeight="Medium" />
 
-        <StackPanel Grid.Row="1" >
+        <Grid Grid.Row="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <DataGrid Background="#555555"
+            <DataGrid Background="#2f2f2f" Grid.Row="0"
                       ItemsSource="{Binding Crate.Items}" x:Name="MyDataGrid" HorizontalAlignment="Left"
-                      CanUserReorderColumns="False" MinColumnWidth="50" RowBackground="#555555"
+                      MinColumnWidth="50" RowBackground="#2f2f2f"
                       BorderThickness="0" CellEditEnding="MyDataGrid_CellEditEnding"
                       AutoGenerateColumns="False" CanUserDeleteRows="True" CanUserResizeColumns="True"
-                      CanUserAddRows="True" Width="Auto" Height="Auto" VerticalAlignment="Top" HorizontalScrollBarVisibility="Auto"
+                      CanUserAddRows="True" Width="1000" Height="500" VerticalAlignment="Top" HorizontalScrollBarVisibility="Visible"
                       VerticalScrollBarVisibility="Visible"
                       >
                 <DataGrid.InputBindings>
                     <KeyBinding Key="C" Modifiers="Ctrl" Command="Copy"/>
                 </DataGrid.InputBindings>
             
+                
             
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="DataGridColumnHeader">
@@ -56,13 +61,13 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="600"/>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="Auto"/>
                 </DataGrid.Columns>
 
                 <DataGrid.CellStyle>
 
                     <Style TargetType="DataGridCell">
-                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Foreground" Value="#cccccc"/>
                         <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="FontSize" Value="14"/>
                         <Setter Property="Padding" Value="2"/>
@@ -93,7 +98,7 @@
 
             </DataGrid>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
                 <Rectangle Width="25" Height="25" HorizontalAlignment="Left" Margin="20,0,0,0"
                            VerticalAlignment="Center">
                     <Rectangle.Fill>
@@ -112,7 +117,7 @@
                 <TextBlock Style="{StaticResource TextBlockOnDark}" Text="Add New" VerticalAlignment="Center"
                            Margin="5,0,0,0" FontSize="14"/>
             </StackPanel>
-        </StackPanel>
+        </Grid>
         
     </Grid>
     

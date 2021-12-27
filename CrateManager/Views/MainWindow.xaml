@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:viewModels="clr-namespace:CrateManager.ViewModels"
-        mc:Ignorable="d"
-        Title="Crate Manager" WindowState="Maximized" d:Height="1080" d:Width="1920" MinHeight="300" MinWidth="750" DataContextChanged="Window_DataContextChanged"
+        mc:Ignorable="d" x:Name="MyWindow"
+        Title="Crate Manager" WindowState="Maximized" d:Height="1080" d:Width="1920" 
+        MinHeight="300" MinWidth="750" DataContextChanged="Window_DataContextChanged"
+        
         >
 
     <Window.Resources>
@@ -30,7 +32,7 @@
         
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="120"/>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="3*"/>
@@ -207,15 +209,22 @@
         
         <!-- Main Title -->
         <StackPanel  Grid.ColumnSpan="6" Grid.Row="1" HorizontalAlignment="Center"
-                     Orientation="Horizontal" Margin="0,0,0,20"
+                     Orientation="Horizontal" Margin="0,30,0,0"
                      >
-            <Image Source="/Images/crate.png"  Width="60"
-                   VerticalAlignment="Bottom" Margin="0,10,30,10" 
-                   StretchDirection="Both" Stretch="Uniform" HorizontalAlignment="Center"
-                   Visibility="Visible"
-                   />
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+
+                <Image x:Name="CrateImage"
+                       Source="/Images/crate.png"  Width="60" Height="60"
+                       VerticalAlignment="Center"
+                       StretchDirection="Both" Stretch="Uniform" HorizontalAlignment="Center"
+                       Visibility="Visible" MouseDown="CrateImageMouseDown"
+                       >
+                </Image>
+
+            </Grid>
             <TextBlock Text="Crate Manager" 
-                       VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20,0,0,0"
                        Foreground="#b88222" FontSize="60" FontFamily="{StaticResource VarelaRound}"
                        />
             <TextBlock Text="{Binding CopyrightSymbol}" VerticalAlignment="Center"

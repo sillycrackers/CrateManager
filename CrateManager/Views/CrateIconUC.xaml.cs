@@ -12,7 +12,7 @@ namespace CrateManager.Views
         public CrateIconUC()
         {
             InitializeComponent();
-            
+           
         }
     }
 }

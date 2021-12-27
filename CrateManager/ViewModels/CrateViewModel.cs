@@ -34,12 +34,6 @@ namespace CrateManager.ViewModels
             : this()
         {
             Crate = crate;
-
-            Crate.Items.Add(new CrateItem("Shoes"));
-            Crate.Items.Add(new CrateItem("Wires"));
-            Crate.Items.Add(new CrateItem("Pipes"));
-            Crate.Items.Add(new CrateItem("Stacklights"));
-            Crate.Items.Add(new CrateItem("Conduit"));
         }
 
     }

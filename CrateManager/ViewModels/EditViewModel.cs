@@ -184,7 +184,7 @@ namespace CrateManager.ViewModels
 
         public void ExecuteAddCategoryCommand(object parameter)
         {
-            if (!Categories.Contains(parameter))
+            if (!Categories.Contains(parameter) && !string.IsNullOrWhiteSpace(parameter.ToString()))
             {
                 Categories.Add(parameter.ToString());
             }

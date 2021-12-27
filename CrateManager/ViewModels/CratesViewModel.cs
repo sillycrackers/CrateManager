@@ -5,6 +5,7 @@ using CrateManager.Models;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 
+
 namespace CrateManager.ViewModels
 {
     public class CratesViewModel : BaseViewModel
@@ -28,6 +29,7 @@ namespace CrateManager.ViewModels
         public ObservableCollection<CrateViewModel> CrateViewModels { get; set; }
         public CrateViewModel SelectedCrateViewModel { get; set; }
         public int TestVal { get; set; } = 5;
+
         [JsonIgnore]
         public ICommand GenerateCrateCommand { get; set; }
 
@@ -37,19 +39,16 @@ namespace CrateManager.ViewModels
             Crates = new ObservableCollection<Crate>();
             SelectedCrateViewModel = new CrateViewModel();
             CrateViewModels = new ObservableCollection<CrateViewModel>();
- 
         }
 
         public void ExecuteGenerateCrate()
         {
-            Crate crate = new Crate(string.Format("Crate {0}", Crates.Count + 1), "Miscellaneous", "Shoes, Cable, Conduit, etc..", Crates.Count + 1);
-            Crates.Add(crate);
-            CrateViewModels.Add(new CrateViewModel(Crates[Crates.Count-1]));
+            GetRandom.GenerateMockCrates(this);
         }
 
         public void UpdateSelectedCrateViewModel(int id)
         {
-            SelectedCrateViewModel = CrateViewModels[id-1];
+            SelectedCrateViewModel = CrateViewModels[id];
         }
 
         public void AddNewCrate(string name, string category, string keyItems)

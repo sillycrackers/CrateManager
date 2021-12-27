@@ -11,7 +11,8 @@
 
     <Grid>
         <!-- Crate Button -->
-        <Button Content="{Binding}" Command="{Binding RelativeSource={RelativeSource FindAncestor, 
+        <Button x:Name="MyButton"
+                Content="{Binding}" Command="{Binding RelativeSource={RelativeSource FindAncestor, 
                 AncestorType={x:Type Window}},Path=DataContext.OpenCrateCommand}" 
                 CommandParameter="{Binding ID}" Height="150" Width="238" Margin="10"
                 Background="{StaticResource CrateBlue}" HorizontalAlignment="Left" VerticalAlignment="Center"
@@ -20,9 +21,35 @@
             <Button.Template>
                 
                 <ControlTemplate TargetType="{x:Type Button}">
-
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name ="Normal">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="BackgroundElement"
+                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                        To="{TemplateBinding Background}" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="BackgroundElement"
+                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                        To="#006087" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="BackgroundElement"
+                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                        To="#0083b8" Duration="0:0:0.00"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                            
                         <dropShadow:SystemDropShadowChrome CornerRadius="5" Grid.Column="0" Grid.Row="0">
-                            <Border x:Name="MyBorder" Background="{TemplateBinding Background}" 
+                            <Border x:Name="BackgroundElement" Background="{TemplateBinding Background}" 
                                     Padding="10" CornerRadius="5" HorizontalAlignment="Stretch"
                                     VerticalAlignment="Stretch"
                                     >
@@ -30,15 +57,8 @@
                                                       VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
                             </Border>
                         </dropShadow:SystemDropShadowChrome>
-
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="MyBorder" Property="Background" Value="#006087"/>
-                        </Trigger> 
-                        <Trigger Property="IsPressed"  Value="True">
-                            <Setter TargetName="MyBorder" Property="Background" Value="#0083b8"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
+                    </Grid>
+      
                     
                 </ControlTemplate>
             </Button.Template>
