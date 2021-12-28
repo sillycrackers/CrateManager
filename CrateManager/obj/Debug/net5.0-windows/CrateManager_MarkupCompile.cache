@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\
+C:\Users\Erik\source\repos\CrateManager\CrateManager\obj\Debug\net5.0-windows\
 CrateManager
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\App.xaml
+C:\Users\Erik\source\repos\CrateManager\CrateManager\App.xaml
 6-91114325
 11463142408
 341012027929
-194213898841
+194305255849
 Styles\Styles1.xaml;Views\CrateIconUC.xaml;Views\CratesViewUC.xaml;Views\CrateViewUC.xaml;Views\EditViewUC.xaml;Views\MainWindow.xaml;
 
 False
