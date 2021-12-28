@@ -48,7 +48,7 @@ namespace CrateManager.ViewModels
 
         public void UpdateSelectedCrateViewModel(int id)
         {
-            SelectedCrateViewModel = CrateViewModels[id];
+            SelectedCrateViewModel = CrateViewModels[id - 1];
         }
 
         public void AddNewCrate(string name, string category, string keyItems)

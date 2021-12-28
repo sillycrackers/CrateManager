@@ -24,7 +24,7 @@ namespace CrateManager
         
             _cratesVM = cratesViewModel;
 
-            string path = @"C:\Users\Erik\source\repos\CrateManager\CrateManager\Helpers\MockData\MOCK_DATA.csv";
+            string path = @"C:\Users\ewesterveld\source\repos\CrateManager\CrateManager\Helpers\MockData\MOCK_DATA.csv";
 
             string[] buffer = File.ReadAllLines(path);
             List<string[]> itemsNoComma = new List<string[]>();
